@@ -1,0 +1,10 @@
+{
+  "source": "py_sim",
+  "span": "first payload word in -> last footer word out",
+  "transaction_cycles": {
+    "w32_n64": 53,
+    "w32_n1024": 533,
+    "w64_n64": 36,
+    "w64_n1024": 276
+  }
+}

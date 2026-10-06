@@ -1,0 +1,30 @@
+{
+  "schema_name": "FirRespFtr",
+  "input_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\fir_cmd\\fir\\results\\schemas_for_validation.py",
+  "ok": true,
+  "summary": "Schema is valid with 1 warning.",
+  "errors": [],
+  "warnings": [
+    {
+      "message": "Multiple schema classes were found. schema_info describes the first discovered schema class.",
+      "code": "multiple_schema_classes",
+      "location": {
+        "line": 45,
+        "column": null,
+        "path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\fir_cmd\\fir\\results\\schemas_for_validation.py"
+      }
+    }
+  ],
+  "schema_info": {
+    "name": "FirCmdHdr",
+    "kind": "DataList",
+    "field_count": 5,
+    "field_names": [
+      "tx_id",
+      "opcode",
+      "count",
+      "decim",
+      "reset"
+    ]
+  }
+}

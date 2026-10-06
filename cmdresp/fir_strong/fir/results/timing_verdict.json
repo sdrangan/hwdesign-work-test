@@ -1,0 +1,30 @@
+{
+  "pass": true,
+  "tolerance": 20,
+  "rows": {
+    "w32_n64": {
+      "py_cycles": 53,
+      "cosim_cycles": 52,
+      "delta": 1,
+      "pass": true
+    },
+    "w32_n1024": {
+      "py_cycles": 533,
+      "cosim_cycles": 532,
+      "delta": 1,
+      "pass": true
+    },
+    "w64_n64": {
+      "py_cycles": 36,
+      "cosim_cycles": 37,
+      "delta": 1,
+      "pass": true
+    },
+    "w64_n1024": {
+      "py_cycles": 276,
+      "cosim_cycles": 277,
+      "delta": 1,
+      "pass": true
+    }
+  }
+}

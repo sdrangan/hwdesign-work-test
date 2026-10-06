@@ -1,0 +1,7 @@
+Stage 1 artifacts (sha256 prefix), recorded when Stage 1 was complete:
+ed6d9d160088d5ea  fir.py [schemas + fir_round_sat + fir_eval]
+1aec3d77dc3fca33  scenarios.py
+7b7aad7624d506b2  layout.md
+a5aa6e38a629e43c  worked_examples.py
+4bdc81137c64f5e1  checker_demo.py
+a414e060399dbf97  make_layout.py

@@ -1,0 +1,59 @@
+PASS  unity-ish gain
+      h=[32767] x=[16384]
+      expected [16384]  got [16384]
+      acc = 32767*16384 = 536854528; +16384 = 536870912 = 2^29; >>15 = 16384
+PASS  exactly +1/2 rounds up
+      h=[1] x=[16384]
+      expected [1]  got [1]
+      acc = 16384; +16384 = 32768; >>15 = 1   (0.5 LSB -> 1)
+PASS  exactly -1/2 rounds up
+      h=[1] x=[-16384]
+      expected [0]  got [0]
+      acc = -16384; +16384 = 0; >>15 = 0     (-0.5 LSB -> 0, not -1)
+PASS  just below +1/2
+      h=[1] x=[16383]
+      expected [0]  got [0]
+      acc = 16383; +16384 = 32767; >>15 = 0
+PASS  just below -1/2: arithmetic shift
+      h=[1] x=[-16385]
+      expected [-1]  got [-1]
+      acc = -16385; +16384 = -1; >>15 = -1   (floor, not truncation toward 0)
+PASS  -1.5 LSB rounds up to -1
+      h=[1] x=[-49152]
+      expected [-1]  got [-1]
+      acc = -49152; +16384 = -32768; >>15 = -1
+PASS  saturate positive
+      h=[32767, 32767] x=[32767, 32767]
+      expected [32766, 32767]  got [32766, 32767]
+      n=0: 32767^2 = 1073676289; +16384 = 1073692673; >>15 = 32766. n=1: 2*1073676289 = 2147352578; +16384 >>15 = 65532 -> clip 32767
+PASS  saturate negative
+      h=[-32768, -32768] x=[32767, 32767]
+      expected [-32767, -32768]  got [-32767, -32768]
+      n=0: -32768*32767 = -1073709056; +16384 >>15 = floor(-32766.5) = -32767. n=1: 2x = -2147418112; +16384 >>15 = floor(-65533.5) = -65534 -> clip -32768
+PASS  (-1)*(-1) overflows
+      h=[-32768] x=[-32768]
+      expected [32767]  got [32767]
+      acc = 2^30; +16384 >>15 = 32768 -> clip 32767
+PASS  two-tap average, delay line from zero
+      h=[16384, 16384] x=[100, 201, -301]
+      expected [50, 151, -50]  got [50, 151, -50]
+      n=0: 16384*100 = 1638400 (=50.0 Q); +16384 >>15 = 50. n=1: 16384*301 = 4931584 (=150.5); +16384 >>15 = 151. n=2: 16384*(-100) = -1638400 (=-50.0); >>15 after +16384 = -50
+PASS  delay line carried in from an earlier command
+      h=[16384, 16384] x=[201, -301]
+      expected [151, -50]  got [151, -50]
+      same as the previous example from n=1: hist ends in x[-1] = 100
+PASS  32 taps, 37-bit accumulator, positive
+      h=[-32768]*32 x=[-32768]*32
+      expected [32767, 32767, 32767, '...']  got [32767, 32767, 32767, '...']
+      n=31: acc = 32*2^30 = 2^35 (needs 37 signed bits) -> clip 32767; n=0: 2^30 -> 32768 -> clip 32767
+PASS  32 taps, negative full scale
+      h=[32767]*32 x=[-32768]*32
+      expected [-32767, -32768, -32768, '...']  got [-32767, -32768, -32768, '...']
+      n=0: -32768*32767 = -1073709056 -> floor(-32766.5) = -32767; n>=1: <= -65534 -> clip -32768
+PASS  pure delay: h = [0, 0, 0.5]
+      h=[0, 0, 16384] x=[1000, -2000, 3000, 4]
+      expected [0, 0, 500, -1000]  got [0, 0, 500, -1000]
+      y[n] = x[n-2]/2: 0, 0, 1000/2 = 500, -2000/2 = -1000 (exact)
+PASS  decimation D=2 keeps n = 0, 2: expected [50, -50] got [50, -50]
+
+15/15 worked examples pass

@@ -1,0 +1,32 @@
+{
+  "w32": {
+    "part": "xc7z020-clg400-1",
+    "target_clock_ns": 10.0,
+    "estimated_clock_ns": 6.859,
+    "BRAM_18K": 0,
+    "BRAM_18K_avail": 280,
+    "DSP": 64,
+    "DSP_avail": 220,
+    "FF": 5708,
+    "FF_avail": 106400,
+    "LUT": 5982,
+    "LUT_avail": 53200,
+    "URAM": 0,
+    "URAM_avail": 0
+  },
+  "w64": {
+    "part": "xc7z020-clg400-1",
+    "target_clock_ns": 10.0,
+    "estimated_clock_ns": 7.122,
+    "BRAM_18K": 0,
+    "BRAM_18K_avail": 280,
+    "DSP": 128,
+    "DSP_avail": 220,
+    "FF": 7947,
+    "FF_avail": 106400,
+    "LUT": 10292,
+    "LUT_avail": 53200,
+    "URAM": 0,
+    "URAM_avail": 0
+  }
+}

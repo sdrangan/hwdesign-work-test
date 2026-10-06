@@ -1,0 +1,32 @@
+[w32] reference model: 21/21 checks pass 
+[w32] wrong_rounding: REJECTED -- 17/21 checks fail
+        timing: burst 3: 32 words, expected 32; first difference at word 0  (+1 more)
+        decim_1: burst 3: 20 words, expected 20; first difference at word 0
+        decim_2: burst 3: 10 words, expected 10; first difference at word 2
+        decim_4: burst 3: 5 words, expected 5; first difference at word 0
+[w32] y_without_tlast: REJECTED -- 19/21 checks fail
+        timing: 6 bursts, expected 8  (+3 more)
+        decim_1: 4 bursts, expected 5  (+1 more)
+        decim_2: 4 bursts, expected 5  (+1 more)
+        decim_4: 4 bursts, expected 5  (+1 more)
+[w32] lanes_swapped: REJECTED -- 19/21 checks fail
+        timing: burst 3: 32 words, expected 32; first difference at word 0  (+1 more)
+        decim_1: burst 3: 20 words, expected 20; first difference at word 0
+        decim_2: burst 3: 10 words, expected 10; first difference at word 0
+        decim_4: burst 3: 5 words, expected 5; first difference at word 0
+[w64] reference model: 21/21 checks pass 
+[w64] wrong_rounding: REJECTED -- 17/21 checks fail
+        timing: burst 3: 16 words, expected 16; first difference at word 0  (+1 more)
+        decim_1: burst 3: 10 words, expected 10; first difference at word 0
+        decim_2: burst 3: 5 words, expected 5; first difference at word 1
+        decim_4: burst 3: 3 words, expected 3; first difference at word 0
+[w64] y_without_tlast: REJECTED -- 19/21 checks fail
+        timing: 6 bursts, expected 8  (+3 more)
+        decim_1: 4 bursts, expected 5  (+1 more)
+        decim_2: 4 bursts, expected 5  (+1 more)
+        decim_4: 4 bursts, expected 5  (+1 more)
+[w64] lanes_swapped: REJECTED -- 19/21 checks fail
+        timing: burst 3: 16 words, expected 16; first difference at word 0  (+1 more)
+        decim_1: burst 3: 10 words, expected 10; first difference at word 0
+        decim_2: burst 3: 5 words, expected 5; first difference at word 0
+        decim_4: burst 3: 3 words, expected 3; first difference at word 0

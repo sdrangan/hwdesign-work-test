@@ -1,0 +1,23 @@
+[
+  {
+    "job": 0,
+    "opcode": 1,
+    "count": 32,
+    "t_first_payload": 3.0000000000000004e-08,
+    "t_footer_end": 2.1e-07
+  },
+  {
+    "job": 1,
+    "opcode": 2,
+    "count": 64,
+    "t_first_payload": 2.1e-07,
+    "t_footer_end": 7.4e-07
+  },
+  {
+    "job": 2,
+    "opcode": 2,
+    "count": 1024,
+    "t_first_payload": 5.499999999999998e-07,
+    "t_footer_end": 5.88e-06
+  }
+]

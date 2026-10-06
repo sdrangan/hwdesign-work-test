@@ -1,0 +1,11 @@
+PipelineII,PipelineDepth,TripCountMin,TripCountMax,LatencyMin,LatencyMax
+1,1,,,31,31
+1,9,1,512,8,519
+1,1,,,,
+1,1,,,,
+1,1,,,,
+1,2,1,16,2,17
+1,1,,,,
+1,1,,,32,32
+1,1,,,31,31
+1,1,,,31,31
