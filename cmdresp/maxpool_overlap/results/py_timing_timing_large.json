@@ -1,0 +1,6 @@
+{
+  "transaction_cycles": 65580,
+  "clk_freq": 100000000.0,
+  "scenario": "timing_large",
+  "source": "py_sim"
+}

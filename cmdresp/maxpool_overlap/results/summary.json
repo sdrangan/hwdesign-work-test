@@ -1,0 +1,254 @@
+{
+  "checks": {
+    "model": {
+      "w32/worked_examples": true,
+      "w32/geometry_mix": true,
+      "w32/limits_max": true,
+      "w32/limits_min": true,
+      "w32/narrow": true,
+      "w32/empty_and_odd": true,
+      "w32/extremes": true,
+      "w32/random_mix": true,
+      "w32/timing_small": true,
+      "w32/timing_large": true,
+      "w32/err_bad_cmd": true,
+      "w32/fresh_after_err_bad_cmd": true,
+      "w32/err_param_n1": true,
+      "w32/fresh_after_err_param_n1": true,
+      "w32/err_param_n0": true,
+      "w32/fresh_after_err_param_n0": true,
+      "w32/err_param_s": true,
+      "w32/fresh_after_err_param_s": true,
+      "w32/err_param_k": true,
+      "w32/fresh_after_err_param_k": true,
+      "w32/err_hdr_early": true,
+      "w32/fresh_after_err_hdr_early": true,
+      "w32/err_hdr_missing": true,
+      "w32/fresh_after_err_hdr_missing": true,
+      "w32/err_end_hdr_early": true,
+      "w32/fresh_after_err_end_hdr_early": true,
+      "w32/err_img_early": true,
+      "w32/fresh_after_err_img_early": true,
+      "w32/err_img_early_even": true,
+      "w32/fresh_after_err_img_early_even": true,
+      "w32/err_img_early_none": true,
+      "w32/fresh_after_err_img_early_none": true,
+      "w32/err_img_missing": true,
+      "w32/fresh_after_err_img_missing": true
+    },
+    "pysim": {
+      "w32/worked_examples": true,
+      "w32/geometry_mix": true,
+      "w32/limits_max": true,
+      "w32/limits_min": true,
+      "w32/narrow": true,
+      "w32/empty_and_odd": true,
+      "w32/extremes": true,
+      "w32/random_mix": true,
+      "w32/timing_small": true,
+      "w32/timing_large": true,
+      "w32/err_bad_cmd": true,
+      "w32/fresh_after_err_bad_cmd": true,
+      "w32/err_param_n1": true,
+      "w32/fresh_after_err_param_n1": true,
+      "w32/err_param_n0": true,
+      "w32/fresh_after_err_param_n0": true,
+      "w32/err_param_s": true,
+      "w32/fresh_after_err_param_s": true,
+      "w32/err_param_k": true,
+      "w32/fresh_after_err_param_k": true,
+      "w32/err_hdr_early": true,
+      "w32/fresh_after_err_hdr_early": true,
+      "w32/fresh_after_err_hdr_missing": true,
+      "w32/err_end_hdr_early": true,
+      "w32/fresh_after_err_end_hdr_early": true,
+      "w32/err_img_early": true,
+      "w32/fresh_after_err_img_early": true,
+      "w32/err_img_early_even": true,
+      "w32/fresh_after_err_img_early_even": true,
+      "w32/err_img_early_none": true,
+      "w32/fresh_after_err_img_early_none": true,
+      "w32/fresh_after_err_img_missing": true
+    },
+    "csim": {
+      "w32/worked_examples": true,
+      "w32/geometry_mix": true,
+      "w32/limits_max": true,
+      "w32/limits_min": true,
+      "w32/narrow": true,
+      "w32/empty_and_odd": true,
+      "w32/extremes": true,
+      "w32/random_mix": true,
+      "w32/timing_small": true,
+      "w32/timing_large": true,
+      "w32/err_bad_cmd": true,
+      "w32/fresh_after_err_bad_cmd": true,
+      "w32/err_param_n1": true,
+      "w32/fresh_after_err_param_n1": true,
+      "w32/err_param_n0": true,
+      "w32/fresh_after_err_param_n0": true,
+      "w32/err_param_s": true,
+      "w32/fresh_after_err_param_s": true,
+      "w32/err_param_k": true,
+      "w32/fresh_after_err_param_k": true,
+      "w32/err_hdr_early": true,
+      "w32/fresh_after_err_hdr_early": true,
+      "w32/err_hdr_missing": true,
+      "w32/fresh_after_err_hdr_missing": true,
+      "w32/err_end_hdr_early": true,
+      "w32/fresh_after_err_end_hdr_early": true,
+      "w32/err_img_early": true,
+      "w32/fresh_after_err_img_early": true,
+      "w32/err_img_early_even": true,
+      "w32/fresh_after_err_img_early_even": true,
+      "w32/err_img_early_none": true,
+      "w32/fresh_after_err_img_early_none": true,
+      "w32/err_img_missing": true,
+      "w32/fresh_after_err_img_missing": true
+    },
+    "cosim": {
+      "w32/worked_examples": true,
+      "w32/geometry_mix": true,
+      "w32/limits_max": true,
+      "w32/limits_min": true,
+      "w32/narrow": true,
+      "w32/empty_and_odd": true,
+      "w32/extremes": true,
+      "w32/random_mix": true,
+      "w32/timing_small": true,
+      "w32/timing_large": true,
+      "w32/err_bad_cmd": true,
+      "w32/fresh_after_err_bad_cmd": true,
+      "w32/err_param_n1": true,
+      "w32/fresh_after_err_param_n1": true,
+      "w32/err_param_n0": true,
+      "w32/fresh_after_err_param_n0": true,
+      "w32/err_param_s": true,
+      "w32/fresh_after_err_param_s": true,
+      "w32/err_param_k": true,
+      "w32/fresh_after_err_param_k": true,
+      "w32/err_hdr_early": true,
+      "w32/fresh_after_err_hdr_early": true,
+      "w32/err_hdr_missing": true,
+      "w32/fresh_after_err_hdr_missing": true,
+      "w32/err_end_hdr_early": true,
+      "w32/fresh_after_err_end_hdr_early": true,
+      "w32/err_img_early": true,
+      "w32/fresh_after_err_img_early": true,
+      "w32/err_img_early_even": true,
+      "w32/fresh_after_err_img_early_even": true,
+      "w32/err_img_early_none": true,
+      "w32/fresh_after_err_img_early_none": true,
+      "w32/err_img_missing": true,
+      "w32/fresh_after_err_img_missing": true
+    }
+  },
+  "timing": {
+    "timing_small": {
+      "pass": true,
+      "py_cycles": 16428,
+      "cosim_cycles": 16432,
+      "delta": 4,
+      "tolerance": 20,
+      "py_timing_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool\\results\\py_timing_timing_small.json",
+      "cosim_timing_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool\\results\\cosim_timing_timing_small.json"
+    },
+    "timing_large": {
+      "pass": true,
+      "py_cycles": 65580,
+      "cosim_cycles": 65584,
+      "delta": 4,
+      "tolerance": 20,
+      "py_timing_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool\\results\\py_timing_timing_large.json",
+      "cosim_timing_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool\\results\\cosim_timing_timing_large.json"
+    }
+  },
+  "throughput": {
+    "scenarios": {
+      "timing_small": {
+        "pixels": 16384,
+        "cosim_cycles": 16432,
+        "overhead_cycles": 48
+      },
+      "timing_large": {
+        "pixels": 65536,
+        "cosim_cycles": 65584,
+        "overhead_cycles": 48
+      }
+    },
+    "clocks_per_pixel": 1.0,
+    "pixels_per_clock": 1.0,
+    "required_pixels_per_clock": 1.0,
+    "pass": true
+  },
+  "loops": "PipelineII,PipelineDepth,TripCountMin,TripCountMax,LatencyMin,LatencyMax\n1,3,4,67587,6,67589\n1,2,,,8,8\n,3 ~ 67630,,,,\n",
+  "resources": {
+    "top_name": "maxpool",
+    "top": {
+      "bram": 0,
+      "dsp": 2,
+      "ff": 2935,
+      "lut": 6637,
+      "uram": 0
+    },
+    "available": {
+      "bram": 280,
+      "dsp": 220,
+      "ff": 106400,
+      "lut": 53200,
+      "uram": 0
+    },
+    "modules": [
+      {
+        "key": "maxpool_accel-538e6f0a",
+        "path": "maxpool",
+        "cls_name": "MaxpoolAccel",
+        "rtl_module": "maxpool",
+        "resources": {
+          "bram": 0,
+          "dsp": 2,
+          "ff": 2935,
+          "lut": 6639,
+          "uram": 0
+        },
+        "subblocks": {
+          "maxpool_Pipeline_PIXELS": {
+            "ff": 1895,
+            "lut": 5093,
+            "bram": 0,
+            "dsp": 0,
+            "uram": 0
+          },
+          "maxpool_Pipeline_FLUSH": {
+            "ff": 85,
+            "lut": 281,
+            "bram": 0,
+            "dsp": 0,
+            "uram": 0
+          }
+        }
+      }
+    ],
+    "unclaimed": {},
+    "module_sum": {
+      "lut": 6639,
+      "ff": 2935,
+      "dsp": 2,
+      "bram": 0,
+      "uram": 0
+    },
+    "integration": {
+      "bram": 0,
+      "dsp": 0,
+      "ff": 0,
+      "lut": -2,
+      "uram": 0
+    },
+    "params": {
+      "in_bw": 32,
+      "out_bw": 32
+    },
+    "synth_seconds": 0.0,
+    "filed_into": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scenarios": {
+    "timing_small": {
+      "pixels": 16384,
+      "cosim_cycles": 16432,
+      "overhead_cycles": 48
+    },
+    "timing_large": {
+      "pixels": 65536,
+      "cosim_cycles": 65584,
+      "overhead_cycles": 48
+    }
+  },
+  "clocks_per_pixel": 1.0,
+  "pixels_per_clock": 1.0,
+  "required_pixels_per_clock": 1.0,
+  "pass": true
+}

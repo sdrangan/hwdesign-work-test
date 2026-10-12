@@ -1,0 +1,69 @@
+{
+  "top_name": "maxpool",
+  "top": {
+    "bram": 0,
+    "dsp": 2,
+    "ff": 2935,
+    "lut": 6637,
+    "uram": 0
+  },
+  "available": {
+    "bram": 280,
+    "dsp": 220,
+    "ff": 106400,
+    "lut": 53200,
+    "uram": 0
+  },
+  "modules": [
+    {
+      "key": "maxpool_accel-538e6f0a",
+      "path": "maxpool",
+      "cls_name": "MaxpoolAccel",
+      "rtl_module": "maxpool",
+      "resources": {
+        "bram": 0,
+        "dsp": 2,
+        "ff": 2935,
+        "lut": 6639,
+        "uram": 0
+      },
+      "subblocks": {
+        "maxpool_Pipeline_PIXELS": {
+          "ff": 1895,
+          "lut": 5093,
+          "bram": 0,
+          "dsp": 0,
+          "uram": 0
+        },
+        "maxpool_Pipeline_FLUSH": {
+          "ff": 85,
+          "lut": 281,
+          "bram": 0,
+          "dsp": 0,
+          "uram": 0
+        }
+      }
+    }
+  ],
+  "unclaimed": {},
+  "module_sum": {
+    "lut": 6639,
+    "ff": 2935,
+    "dsp": 2,
+    "bram": 0,
+    "uram": 0
+  },
+  "integration": {
+    "bram": 0,
+    "dsp": 0,
+    "ff": 0,
+    "lut": -2,
+    "uram": 0
+  },
+  "params": {
+    "in_bw": 32,
+    "out_bw": 32
+  },
+  "synth_seconds": 0.0,
+  "filed_into": null
+}

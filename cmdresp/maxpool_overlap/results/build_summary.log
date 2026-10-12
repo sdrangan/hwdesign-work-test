@@ -1,0 +1,320 @@
+maxpool_source:
+    maxpool.py
+    UP-TO-DATE
+scenarios_source:
+    scenarios.py
+    UP-TO-DATE
+gen_include:
+    include
+    UP-TO-DATE
+sources:
+    maxpool_body_impl.tpp
+    UP-TO-DATE
+scenarios:
+    data\scenarios.txt
+    UP-TO-DATE
+gen_kernel:
+    gen\maxpool.hpp
+    gen\maxpool.cpp
+    maxpool_body_impl.tpp
+    RUNNING...
+    PASSED (0.0 s)
+py_model:
+    results\model_done.txt
+    RUNNING...
+    PASSED (4.0 s)
+py_sim:
+    results\pysim_done.txt
+    RUNNING...
+    PASSED (3.6 s)
+csim:
+    results\csim_done.txt
+    RUNNING...
+                       halted=1 error=3 tx_id=141 unread_words=56
+
+scenario fresh_after_err_param_k            halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_hdr_early                      halted=1 error=5 tx_id=152 unread_words=42
+
+scenario fresh_after_err_hdr_early          halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_hdr_missing                    halted=1 error=6 tx_id=162 unread_words=21
+
+scenario fresh_after_err_hdr_missing        halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_end_hdr_early                  halted=1 error=5 tx_id=172 unread_words=0
+
+scenario fresh_after_err_end_hdr_early      halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_img_early                      halted=1 error=1 tx_id=182 unread_words=24
+
+scenario fresh_after_err_img_early          halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_img_early_even                 halted=1 error=1 tx_id=191 unread_words=24
+
+scenario fresh_after_err_img_early_even     halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_img_early_none                 halted=1 error=1 tx_id=201 unread_words=24
+
+scenario fresh_after_err_img_early_none     halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_img_missing                    halted=1 error=2 tx_id=211 unread_words=24
+
+scenario fresh_after_err_img_missing        halted=0 error=0 tx_id=0 unread_words=0
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 98316
+
+INFO: [SIM 211-1] CSim done with 0 errors.
+
+INFO: [SIM 211-3] *************** CSIM finish ***************
+
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:16; Allocated memory: 1.086 MB.
+
+WAVEFLOW_SUCCESS: maxpool C simulation passed.
+
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 3 seconds. Total elapsed time: 20.638 seconds; peak allocated memory: 147.242 MB.
+
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 24s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
+
+    PASSED (26.0 s)
+check_model:
+    results\check_model.json
+    RUNNING...
+    model  w32/worked_examples                PASS
+    model  w32/geometry_mix                   PASS
+    model  w32/limits_max                     PASS
+    model  w32/limits_min                     PASS
+    model  w32/narrow                         PASS
+    model  w32/empty_and_odd                  PASS
+    model  w32/extremes                       PASS
+    model  w32/random_mix                     PASS
+    model  w32/timing_small                   PASS
+    model  w32/timing_large                   PASS
+    model  w32/err_bad_cmd                    PASS
+    model  w32/fresh_after_err_bad_cmd        PASS
+    model  w32/err_param_n1                   PASS
+    model  w32/fresh_after_err_param_n1       PASS
+    model  w32/err_param_n0                   PASS
+    model  w32/fresh_after_err_param_n0       PASS
+    model  w32/err_param_s                    PASS
+    model  w32/fresh_after_err_param_s        PASS
+    model  w32/err_param_k                    PASS
+    model  w32/fresh_after_err_param_k        PASS
+    model  w32/err_hdr_early                  PASS
+    model  w32/fresh_after_err_hdr_early      PASS
+    model  w32/err_hdr_missing                PASS
+    model  w32/fresh_after_err_hdr_missing    PASS
+    model  w32/err_end_hdr_early              PASS
+    model  w32/fresh_after_err_end_hdr_early  PASS
+    model  w32/err_img_early                  PASS
+    model  w32/fresh_after_err_img_early      PASS
+    model  w32/err_img_early_even             PASS
+    model  w32/fresh_after_err_img_early_even PASS
+    model  w32/err_img_early_none             PASS
+    model  w32/fresh_after_err_img_early_none PASS
+    model  w32/err_img_missing                PASS
+    model  w32/fresh_after_err_img_missing    PASS
+    PASSED (0.7 s)
+check_pysim:
+    results\check_pysim.json
+    RUNNING...
+    pysim  w32/worked_examples                PASS
+    pysim  w32/geometry_mix                   PASS
+    pysim  w32/limits_max                     PASS
+    pysim  w32/limits_min                     PASS
+    pysim  w32/narrow                         PASS
+    pysim  w32/empty_and_odd                  PASS
+    pysim  w32/extremes                       PASS
+    pysim  w32/random_mix                     PASS
+    pysim  w32/timing_small                   PASS
+    pysim  w32/timing_large                   PASS
+    pysim  w32/err_bad_cmd                    PASS
+    pysim  w32/fresh_after_err_bad_cmd        PASS
+    pysim  w32/err_param_n1                   PASS
+    pysim  w32/fresh_after_err_param_n1       PASS
+    pysim  w32/err_param_n0                   PASS
+    pysim  w32/fresh_after_err_param_n0       PASS
+    pysim  w32/err_param_s                    PASS
+    pysim  w32/fresh_after_err_param_s        PASS
+    pysim  w32/err_param_k                    PASS
+    pysim  w32/fresh_after_err_param_k        PASS
+    pysim  w32/err_hdr_early                  PASS
+    pysim  w32/fresh_after_err_hdr_early      PASS
+    pysim  w32/fresh_after_err_hdr_missing    PASS
+    pysim  w32/err_end_hdr_early              PASS
+    pysim  w32/fresh_after_err_end_hdr_early  PASS
+    pysim  w32/err_img_early                  PASS
+    pysim  w32/fresh_after_err_img_early      PASS
+    pysim  w32/err_img_early_even             PASS
+    pysim  w32/fresh_after_err_img_early_even PASS
+    pysim  w32/err_img_early_none             PASS
+    pysim  w32/fresh_after_err_img_early_none PASS
+    pysim  w32/fresh_after_err_img_missing    PASS
+    PASSED (0.3 s)
+extract_py_timing_timing_small:
+    results\py_timing_timing_small.json
+    RUNNING...
+    PASSED (0.0 s)
+extract_py_timing_timing_large:
+    results\py_timing_timing_large.json
+    RUNNING...
+    PASSED (0.0 s)
+check_csim:
+    results\check_csim.json
+    RUNNING...
+    csim   w32/worked_examples                PASS
+    csim   w32/geometry_mix                   PASS
+    csim   w32/limits_max                     PASS
+    csim   w32/limits_min                     PASS
+    csim   w32/narrow                         PASS
+    csim   w32/empty_and_odd                  PASS
+    csim   w32/extremes                       PASS
+    csim   w32/random_mix                     PASS
+    csim   w32/timing_small                   PASS
+    csim   w32/timing_large                   PASS
+    csim   w32/err_bad_cmd                    PASS
+    csim   w32/fresh_after_err_bad_cmd        PASS
+    csim   w32/err_param_n1                   PASS
+    csim   w32/fresh_after_err_param_n1       PASS
+    csim   w32/err_param_n0                   PASS
+    csim   w32/fresh_after_err_param_n0       PASS
+    csim   w32/err_param_s                    PASS
+    csim   w32/fresh_after_err_param_s        PASS
+    csim   w32/err_param_k                    PASS
+    csim   w32/fresh_after_err_param_k        PASS
+    csim   w32/err_hdr_early                  PASS
+    csim   w32/fresh_after_err_hdr_early      PASS
+    csim   w32/err_hdr_missing                PASS
+    csim   w32/fresh_after_err_hdr_missing    PASS
+    csim   w32/err_end_hdr_early              PASS
+    csim   w32/fresh_after_err_end_hdr_early  PASS
+    csim   w32/err_img_early                  PASS
+    csim   w32/fresh_after_err_img_early      PASS
+    csim   w32/err_img_early_even             PASS
+    csim   w32/fresh_after_err_img_early_even PASS
+    csim   w32/err_img_early_none             PASS
+    csim   w32/fresh_after_err_img_early_none PASS
+    csim   w32/err_img_missing                PASS
+    csim   w32/fresh_after_err_img_missing    PASS
+    PASSED (0.1 s)
+csynth:
+    w32_proj\solution1
+    results\cosim_done.txt
+    RUNNING...
+m_k                        halted=1 error=3 tx_id=141 unread_words=56
+
+scenario fresh_after_err_param_k            halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_hdr_early                      halted=1 error=5 tx_id=152 unread_words=42
+
+scenario fresh_after_err_hdr_early          halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_hdr_missing                    halted=1 error=6 tx_id=162 unread_words=21
+
+scenario fresh_after_err_hdr_missing        halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_end_hdr_early                  halted=1 error=5 tx_id=172 unread_words=0
+
+scenario fresh_after_err_end_hdr_early      halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_img_early                      halted=1 error=1 tx_id=182 unread_words=24
+
+scenario fresh_after_err_img_early          halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_img_early_even                 halted=1 error=1 tx_id=191 unread_words=24
+
+scenario fresh_after_err_img_early_even     halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_img_early_none                 halted=1 error=1 tx_id=201 unread_words=24
+
+scenario fresh_after_err_img_early_none     halted=0 error=0 tx_id=0 unread_words=0
+
+scenario err_img_missing                    halted=1 error=2 tx_id=211 unread_words=24
+
+scenario fresh_after_err_img_missing        halted=0 error=0 tx_id=0 unread_words=0
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 98316
+
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:04:29; Allocated memory: 1.875 MB.
+WAVEFLOW_SUCCESS: maxpool C synthesis and RTL co-simulation of every scenario passed.
+INFO: [HLS 200-112] Total CPU user time: 9 seconds. Total CPU system time: 8 seconds. Total elapsed time: 303.144 seconds; peak allocated memory: 268.711 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 5m 7s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
+
+    PASSED (308.5 s)
+inspect_synth:
+    results\resources.json
+    results\loop_df.csv
+    RUNNING...
+  maxpool: no platform selected — wrote resources.json only
+  modules {'lut': 6639, 'ff': 2935, 'dsp': 2, 'bram': 0, 'uram': 0} + integration {'bram': 0, 'dsp': 0, 'ff': 0, 'lut': -2, 'uram': 0} = top {'bram': 0, 'dsp': 2, 'ff': 2935, 'lut': 6637, 'uram': 0}
+    PASSED (1.4 s)
+check_cosim:
+    results\check_cosim.json
+    RUNNING...
+    cosim  w32/worked_examples                PASS
+    cosim  w32/geometry_mix                   PASS
+    cosim  w32/limits_max                     PASS
+    cosim  w32/limits_min                     PASS
+    cosim  w32/narrow                         PASS
+    cosim  w32/empty_and_odd                  PASS
+    cosim  w32/extremes                       PASS
+    cosim  w32/random_mix                     PASS
+    cosim  w32/timing_small                   PASS
+    cosim  w32/timing_large                   PASS
+    cosim  w32/err_bad_cmd                    PASS
+    cosim  w32/fresh_after_err_bad_cmd        PASS
+    cosim  w32/err_param_n1                   PASS
+    cosim  w32/fresh_after_err_param_n1       PASS
+    cosim  w32/err_param_n0                   PASS
+    cosim  w32/fresh_after_err_param_n0       PASS
+    cosim  w32/err_param_s                    PASS
+    cosim  w32/fresh_after_err_param_s        PASS
+    cosim  w32/err_param_k                    PASS
+    cosim  w32/fresh_after_err_param_k        PASS
+    cosim  w32/err_hdr_early                  PASS
+    cosim  w32/fresh_after_err_hdr_early      PASS
+    cosim  w32/err_hdr_missing                PASS
+    cosim  w32/fresh_after_err_hdr_missing    PASS
+    cosim  w32/err_end_hdr_early              PASS
+    cosim  w32/fresh_after_err_end_hdr_early  PASS
+    cosim  w32/err_img_early                  PASS
+    cosim  w32/fresh_after_err_img_early      PASS
+    cosim  w32/err_img_early_even             PASS
+    cosim  w32/fresh_after_err_img_early_even PASS
+    cosim  w32/err_img_early_none             PASS
+    cosim  w32/fresh_after_err_img_early_none PASS
+    cosim  w32/err_img_missing                PASS
+    cosim  w32/fresh_after_err_img_missing    PASS
+    PASSED (0.7 s)
+cosim_tx:
+    results\cosim_cycles.json
+    RUNNING...
+    PASSED (0.0 s)
+cosim_timing_timing_small:
+    results\cosim_timing_timing_small.json
+    RUNNING...
+    PASSED (0.0 s)
+cosim_timing_timing_large:
+    results\cosim_timing_timing_large.json
+    RUNNING...
+    PASSED (0.0 s)
+throughput:
+    results\throughput.json
+    RUNNING...
+    throughput: 1.0000 pixels/clock (65584 - 16432 cycles over 65536 - 16384 pixels)
+    PASSED (0.0 s)
+validate_timing_timing_small:
+    results\timing_verdict_timing_small.json
+    RUNNING...
+    PASSED (0.0 s)
+validate_timing_timing_large:
+    results\timing_verdict_timing_large.json
+    RUNNING...
+    PASSED (0.0 s)
+summary:
+    results\summary.json
+    RUNNING...
+    PASSED (0.1 s)
