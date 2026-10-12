@@ -1,0 +1,306 @@
+
+
+================================================================
+== Vitis HLS Report for 'maxpool_Pipeline_VITIS_LOOP_80_2'
+================================================================
+* Date:           Mon Oct 12 14:58:55 2026
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        w32_proj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  10.00 ns|  13.660 ns|     2.70 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min    |    max   | min | max |                      Type                      |
+    +---------+---------+-----------+----------+-----+-----+------------------------------------------------+
+    |        5|       68|  68.300 ns|  0.929 us|    1|   64|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |- VITIS_LOOP_80_2  |        3|       66|         4|          1|          1|  1 ~ 64|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 4, States = { 1 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 6.58>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%a = alloca i32 1" [gen/../maxpool_body_impl.tpp:74->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 7 'alloca' 'a' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%ny = alloca i32 1" [gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 8 'alloca' 'ny' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 9 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_0_0_010947 = alloca i32 1"   --->   Operation 10 'alloca' 'p_0_0_010947' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%p_0_0_0109_149 = alloca i32 1"   --->   Operation 11 'alloca' 'p_0_0_0109_149' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%y_word = alloca i32 1" [gen/../maxpool_body_impl.tpp:62->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 12 'alloca' 'y_word' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%y_word_1 = alloca i32 1" [gen/../maxpool_body_impl.tpp:62->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 13 'alloca' 'y_word_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%acc = alloca i32 1" [gen/../maxpool_body_impl.tpp:73->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 14 'alloca' 'acc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%held_valid = alloca i32 1" [gen/../maxpool_body_impl.tpp:76->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 15 'alloca' 'held_valid' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%p_0_0_09352 = alloca i32 1"   --->   Operation 16 'alloca' 'p_0_0_09352' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%p_0_0_093_154 = alloca i32 1"   --->   Operation 17 'alloca' 'p_0_0_093_154' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%nwords_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %nwords"   --->   Operation 18 'read' 'nwords_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %empty"   --->   Operation 19 'read' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%sub13_i_i_read = read i15 @_ssdm_op_Read.ap_auto.i15, i15 %sub13_i_i"   --->   Operation 20 'read' 'sub13_i_i_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln57_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %zext_ln57"   --->   Operation 21 'read' 'zext_ln57_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln57_cast = zext i16 %zext_ln57_read"   --->   Operation 22 'zext' 'zext_ln57_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %m_out_V_data_V, i4 %m_out_V_keep_V, i4 %m_out_V_strb_V, i1 0, i1 %m_out_V_last_V, i1 0, i1 0, void @empty_8"   --->   Operation 23 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %s_in_V_data_V, i4 %s_in_V_keep_V, i4 %s_in_V_strb_V, i1 0, i1 %s_in_V_last_V, i1 0, i1 0, void @empty_9"   --->   Operation 24 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %m_out_V_last_V, i4 %m_out_V_strb_V, i4 %m_out_V_keep_V, i32 %m_out_V_data_V, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %s_in_V_last_V, i4 %s_in_V_strb_V, i4 %s_in_V_keep_V, i32 %s_in_V_data_V, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (1.58ns)   --->   "%store_ln0 = store i16 0, i16 %p_0_0_093_154"   --->   Operation 27 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 28 [1/1] (1.58ns)   --->   "%store_ln0 = store i16 0, i16 %p_0_0_09352"   --->   Operation 28 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 29 [1/1] (1.58ns)   --->   "%store_ln76 = store i1 0, i1 %held_valid" [gen/../maxpool_body_impl.tpp:76->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 29 'store' 'store_ln76' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 30 [1/1] (1.58ns)   --->   "%store_ln73 = store i16 0, i16 %acc" [gen/../maxpool_body_impl.tpp:73->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 30 'store' 'store_ln73' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 31 [1/1] (1.58ns)   --->   "%store_ln62 = store i16 0, i16 %y_word_1" [gen/../maxpool_body_impl.tpp:62->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 31 'store' 'store_ln62' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 32 [1/1] (1.58ns)   --->   "%store_ln62 = store i16 0, i16 %y_word" [gen/../maxpool_body_impl.tpp:62->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 32 'store' 'store_ln62' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 33 [1/1] (1.58ns)   --->   "%store_ln80 = store i15 0, i15 %i" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 33 'store' 'store_ln80' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 34 [1/1] (1.58ns)   --->   "%store_ln75 = store i2 0, i2 %ny" [gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 34 'store' 'store_ln75' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 35 [1/1] (1.58ns)   --->   "%store_ln74 = store i4 0, i4 %a" [gen/../maxpool_body_impl.tpp:74->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 35 'store' 'store_ln74' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 36 [1/1] (1.58ns)   --->   "%br_ln81 = br void %for.body10.i.i_ifconv" [gen/../maxpool_body_impl.tpp:81->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 36 'br' 'br_ln81' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%missing = phi i1 %missing_1, void %if.end56.i.i, i1 0, void %newFuncRoot"   --->   Operation 37 'phi' 'missing' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%early = phi i1 %early_1, void %if.end56.i.i, i1 0, void %newFuncRoot"   --->   Operation 38 'phi' 'early' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%i_2 = load i15 %i" [gen/../maxpool_body_impl.tpp:81->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 39 'load' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln81 = zext i15 %i_2" [gen/../maxpool_body_impl.tpp:81->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 40 'zext' 'zext_ln81' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i15.i1, i15 %i_2, i1 0" [gen/../maxpool_body_impl.tpp:83->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 41 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%zext_ln83 = zext i16 %shl_ln" [gen/../maxpool_body_impl.tpp:83->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 42 'zext' 'zext_ln83' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (2.07ns)   --->   "%nrem = sub i17 %zext_ln57_cast, i17 %zext_ln83" [gen/../maxpool_body_impl.tpp:83->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 43 'sub' 'nrem' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 44 [1/1] (0.51ns)   --->   "%empty_22 = read i41 @_ssdm_op_Read.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %s_in_V_data_V, i4 %s_in_V_keep_V, i4 %s_in_V_strb_V, i1 %s_in_V_last_V" [./include/int16_array_utils.h:148->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 44 'read' 'empty_22' <Predicate = true> <Delay = 0.51> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%axis_word_data = extractvalue i41 %empty_22" [./include/int16_array_utils.h:148->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 45 'extractvalue' 'axis_word_data' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%axis_word_last = extractvalue i41 %empty_22" [./include/int16_array_utils.h:148->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 46 'extractvalue' 'axis_word_last' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (2.10ns)   --->   "%icmp_ln150 = icmp_sgt  i17 %nrem, i17 0" [./include/int16_array_utils.h:150->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 47 'icmp' 'icmp_ln150' <Predicate = true> <Delay = 2.10> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.10> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%trunc_ln151 = trunc i32 %axis_word_data" [./include/int16_array_utils.h:151->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 48 'trunc' 'trunc_ln151' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_2 = partselect i16 @_ssdm_op_PartSelect.i16.i17.i32.i32, i17 %nrem, i32 1, i32 16" [./include/int16_array_utils.h:153->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 49 'partselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (2.07ns)   --->   "%icmp_ln153 = icmp_sgt  i16 %tmp_2, i16 0" [./include/int16_array_utils.h:153->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 50 'icmp' 'icmp_ln153' <Predicate = true> <Delay = 2.07> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_1 = partselect i16 @_ssdm_op_PartSelect.i16.i32.i32, i32 %axis_word_data, i32 16" [./include/int16_array_utils.h:154->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 51 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (1.94ns)   --->   "%final_word = icmp_ne  i15 %i_2, i15 %sub13_i_i_read" [gen/../maxpool_body_impl.tpp:87->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 52 'icmp' 'final_word' <Predicate = true> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 53 [1/1] (0.97ns)   --->   "%and_ln113 = and i1 %axis_word_last, i1 %final_word" [gen/../maxpool_body_impl.tpp:113->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 53 'and' 'and_ln113' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 54 [1/1] (0.97ns)   --->   "%early_1 = or i1 %and_ln113, i1 %early" [gen/../maxpool_body_impl.tpp:113->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 54 'or' 'early_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (0.00ns) (grouped into LUT with out node missing_1)   --->   "%or_ln113_1 = or i1 %axis_word_last, i1 %final_word" [gen/../maxpool_body_impl.tpp:113->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 55 'or' 'or_ln113_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (0.00ns) (grouped into LUT with out node missing_1)   --->   "%xor_ln113 = xor i1 %or_ln113_1, i1 1" [gen/../maxpool_body_impl.tpp:113->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 56 'xor' 'xor_ln113' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 57 [1/1] (0.97ns) (out node of the LUT)   --->   "%missing_1 = or i1 %missing, i1 %xor_ln113" [gen/../maxpool_body_impl.tpp:113->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 57 'or' 'missing_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node or_cond36)   --->   "%xor_ln113_1 = xor i1 %and_ln113, i1 1" [gen/../maxpool_body_impl.tpp:113->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 58 'xor' 'xor_ln113_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 59 [1/1] (1.94ns)   --->   "%i_3 = add i16 %zext_ln81, i16 1" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 59 'add' 'i_3' <Predicate = true> <Delay = 1.94> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%trunc_ln80 = trunc i16 %i_3" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 60 'trunc' 'trunc_ln80' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (2.07ns)   --->   "%icmp_ln80 = icmp_ult  i16 %i_3, i16 %nwords_read" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 61 'icmp' 'icmp_ln80' <Predicate = true> <Delay = 2.07> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 62 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond36 = and i1 %icmp_ln80, i1 %xor_ln113_1" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 62 'and' 'or_cond36' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 63 [1/1] (1.58ns)   --->   "%store_ln80 = store i15 %trunc_ln80, i15 %i" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 63 'store' 'store_ln80' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%br_ln80 = br i1 %or_cond36, void %cleanup67.i.i.loopexit.exitStub, void %for.body10.i.i_ifconv" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 64 'br' 'br_ln80' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 13.6>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%a_5 = load i4 %a" [gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 65 'load' 'a_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%p_0_0_010947_load = load i16 %p_0_0_010947"   --->   Operation 66 'load' 'p_0_0_010947_load' <Predicate = (!icmp_ln150)> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.80ns)   --->   "%v = select i1 %icmp_ln150, i16 %trunc_ln151, i16 %p_0_0_010947_load" [./include/int16_array_utils.h:150->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 67 'select' 'v' <Predicate = true> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 68 [1/1] (1.73ns)   --->   "%icmp_ln93 = icmp_eq  i4 %a_5, i4 0" [gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 68 'icmp' 'icmp_ln93' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 69 [1/1] (1.73ns)   --->   "%a_6 = add i4 %a_5, i4 1" [gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 69 'add' 'a_6' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 70 [1/1] (1.73ns)   --->   "%icmp_ln95 = icmp_eq  i4 %a_6, i4 %tmp" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 70 'icmp' 'icmp_ln95' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 71 [1/1] (0.97ns)   --->   "%and_ln95 = and i1 %icmp_ln150, i1 %icmp_ln95" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 71 'and' 'and_ln95' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node a_2)   --->   "%xor_ln150 = xor i1 %icmp_ln150, i1 1" [./include/int16_array_utils.h:150->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 72 'xor' 'xor_ln150' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 73 [1/1] (0.00ns) (grouped into LUT with out node a_2)   --->   "%sel_tmp = bitconcatenate i2 @_ssdm_op_BitConcatenate.i2.i1.i1, i1 %and_ln95, i1 %xor_ln150" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 73 'bitconcatenate' 'sel_tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (1.58ns) (out node of the LUT)   --->   "%a_2 = sparsemux i4 @_ssdm_op_SparseMux.ap_auto.3i4.i4.i2, i2 2, i4 0, i2 1, i4 %a_5, i2 0, i4 %a_6, i4 0, i2 %sel_tmp" [gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 74 'sparsemux' 'a_2' <Predicate = true> <Delay = 1.58> <CoreInst = "OneHotSparseMux_HasDef">   --->   Core 140 'OneHotSparseMux_HasDef' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 75 [1/1] (1.73ns)   --->   "%a_7 = add i4 %a_2, i4 1" [gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 75 'add' 'a_7' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 76 [1/1] (1.73ns)   --->   "%icmp_ln95_1 = icmp_eq  i4 %a_7, i4 %tmp" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 76 'icmp' 'icmp_ln95_1' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 77 [1/1] (0.97ns)   --->   "%and_ln95_1 = and i1 %icmp_ln153, i1 %icmp_ln95_1" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 77 'and' 'and_ln95_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node a_4)   --->   "%xor_ln153 = xor i1 %icmp_ln153, i1 1" [./include/int16_array_utils.h:153->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 78 'xor' 'xor_ln153' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 79 [1/1] (0.00ns) (grouped into LUT with out node a_4)   --->   "%sel_tmp1 = bitconcatenate i2 @_ssdm_op_BitConcatenate.i2.i1.i1, i1 %and_ln95_1, i1 %xor_ln153" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 79 'bitconcatenate' 'sel_tmp1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (1.58ns) (out node of the LUT)   --->   "%a_4 = sparsemux i4 @_ssdm_op_SparseMux.ap_auto.3i4.i4.i2, i2 2, i4 0, i2 1, i4 %a_2, i2 0, i4 %a_7, i4 0, i2 %sel_tmp1" [gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 80 'sparsemux' 'a_4' <Predicate = true> <Delay = 1.58> <CoreInst = "OneHotSparseMux_HasDef">   --->   Core 140 'OneHotSparseMux_HasDef' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%store_ln150 = store i16 %v, i16 %p_0_0_010947" [./include/int16_array_utils.h:150->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 81 'store' 'store_ln150' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (1.58ns)   --->   "%store_ln74 = store i4 %a_4, i4 %a" [gen/../maxpool_body_impl.tpp:74->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 82 'store' 'store_ln74' <Predicate = true> <Delay = 1.58>
+
+State 3 <SV = 2> <Delay = 9.30>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%ny_5 = load i2 %ny" [gen/../maxpool_body_impl.tpp:97->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 83 'load' 'ny_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%p_0_0_0109_149_load = load i16 %p_0_0_0109_149"   --->   Operation 84 'load' 'p_0_0_0109_149_load' <Predicate = (!icmp_ln153)> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%acc_1 = load i16 %acc"   --->   Operation 85 'load' 'acc_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (0.80ns)   --->   "%v_1 = select i1 %icmp_ln153, i16 %tmp_1, i16 %p_0_0_0109_149_load" [./include/int16_array_utils.h:153->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 86 'select' 'v_1' <Predicate = true> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 87 [1/1] (2.07ns)   --->   "%icmp_ln93_1 = icmp_sgt  i16 %v, i16 %acc_1" [gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 87 'icmp' 'icmp_ln93_1' <Predicate = true> <Delay = 2.07> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 88 [1/1] (0.00ns) (grouped into LUT with out node acc_6)   --->   "%or_ln93 = or i1 %icmp_ln93, i1 %icmp_ln93_1" [gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 88 'or' 'or_ln93' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 89 [1/1] (0.97ns) (out node of the LUT)   --->   "%acc_6 = select i1 %or_ln93, i16 %v, i16 %acc_1" [gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 89 'select' 'acc_6' <Predicate = true> <Delay = 0.97> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 90 [1/1] (1.56ns)   --->   "%ny_6 = add i2 %ny_5, i2 1" [gen/../maxpool_body_impl.tpp:97->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 90 'add' 'ny_6' <Predicate = (and_ln95)> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 91 [1/1] (0.80ns)   --->   "%acc_2 = select i1 %icmp_ln150, i16 %acc_6, i16 %acc_1" [./include/int16_array_utils.h:150->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 91 'select' 'acc_2' <Predicate = true> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 92 [1/1] (0.99ns)   --->   "%ny_2 = select i1 %and_ln95, i2 %ny_6, i2 %ny_5" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 92 'select' 'ny_2' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 93 [1/1] (1.73ns)   --->   "%icmp_ln93_2 = icmp_eq  i4 %a_2, i4 0" [gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 93 'icmp' 'icmp_ln93_2' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 94 [1/1] (2.07ns)   --->   "%icmp_ln93_3 = icmp_sgt  i16 %v_1, i16 %acc_2" [gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 94 'icmp' 'icmp_ln93_3' <Predicate = true> <Delay = 2.07> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node acc_7)   --->   "%or_ln93_1 = or i1 %icmp_ln93_2, i1 %icmp_ln93_3" [gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 95 'or' 'or_ln93_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 96 [1/1] (0.97ns) (out node of the LUT)   --->   "%acc_7 = select i1 %or_ln93_1, i16 %v_1, i16 %acc_2" [gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 96 'select' 'acc_7' <Predicate = true> <Delay = 0.97> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 97 [1/1] (1.56ns)   --->   "%ny_7 = add i2 %ny_2, i2 1" [gen/../maxpool_body_impl.tpp:97->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 97 'add' 'ny_7' <Predicate = (and_ln95_1)> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 98 [1/1] (0.80ns)   --->   "%acc_4 = select i1 %icmp_ln153, i16 %acc_7, i16 %acc_2" [./include/int16_array_utils.h:153->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 98 'select' 'acc_4' <Predicate = true> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 99 [1/1] (0.99ns)   --->   "%ny_4 = select i1 %and_ln95_1, i2 %ny_7, i2 %ny_2" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 99 'select' 'ny_4' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 100 [1/1] (1.56ns)   --->   "%icmp_ln102 = icmp_eq  i2 %ny_4, i2 2" [gen/../maxpool_body_impl.tpp:102->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 100 'icmp' 'icmp_ln102' <Predicate = true> <Delay = 1.56> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%br_ln102 = br i1 %icmp_ln102, void %for.body10.i.i_ifconv.if.end56.i.i_crit_edge, void %if.then39.i.i" [gen/../maxpool_body_impl.tpp:102->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 101 'br' 'br_ln102' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (1.58ns)   --->   "%store_ln75 = store i2 %ny_4, i2 %ny" [gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 102 'store' 'store_ln75' <Predicate = (!icmp_ln102)> <Delay = 1.58>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%br_ln102 = br void %if.end56.i.i" [gen/../maxpool_body_impl.tpp:102->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 103 'br' 'br_ln102' <Predicate = (!icmp_ln102)> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%held_valid_load = load i1 %held_valid" [gen/../maxpool_body_impl.tpp:103->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 104 'load' 'held_valid_load' <Predicate = (icmp_ln102)> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "%br_ln103 = br i1 %held_valid_load, void %for.body47.i.i, void %if.then40.i.i" [gen/../maxpool_body_impl.tpp:103->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 105 'br' 'br_ln103' <Predicate = (icmp_ln102)> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (1.58ns)   --->   "%store_ln76 = store i1 1, i1 %held_valid" [gen/../maxpool_body_impl.tpp:76->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 106 'store' 'store_ln76' <Predicate = (icmp_ln102)> <Delay = 1.58>
+ST_3 : Operation 107 [1/1] (1.58ns)   --->   "%store_ln75 = store i2 0, i2 %ny" [gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 107 'store' 'store_ln75' <Predicate = (icmp_ln102)> <Delay = 1.58>
+ST_3 : Operation 108 [1/1] (1.58ns)   --->   "%store_ln73 = store i16 %acc_4, i16 %acc" [gen/../maxpool_body_impl.tpp:73->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 108 'store' 'store_ln73' <Predicate = true> <Delay = 1.58>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "%store_ln153 = store i16 %v_1, i16 %p_0_0_0109_149" [./include/int16_array_utils.h:153->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 109 'store' 'store_ln153' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 4.76>
+ST_4 : Operation 110 [1/1] (0.00ns)   --->   "%y_word_2 = load i16 %y_word"   --->   Operation 110 'load' 'y_word_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 111 [1/1] (0.00ns)   --->   "%y_word_7 = load i16 %y_word_1"   --->   Operation 111 'load' 'y_word_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 112 [1/1] (0.00ns)   --->   "%specpipeline_ln81 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_1" [gen/../maxpool_body_impl.tpp:81->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 112 'specpipeline' 'specpipeline_ln81' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 113 [1/1] (0.00ns)   --->   "%speclooptripcount_ln82 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 64, i64 32" [gen/../maxpool_body_impl.tpp:82->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 113 'speclooptripcount' 'speclooptripcount_ln82' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 114 [1/1] (0.00ns)   --->   "%specloopname_ln80 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11" [gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 114 'specloopname' 'specloopname_ln80' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 115 [1/1] (1.56ns)   --->   "%icmp_ln96 = icmp_eq  i2 %ny_5, i2 1" [gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 115 'icmp' 'icmp_ln96' <Predicate = (and_ln95)> <Delay = 1.56> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 116 [1/1] (0.00ns) (grouped into LUT with out node y_word_6)   --->   "%y_word_4 = select i1 %icmp_ln96, i16 %acc_6, i16 %y_word_7" [gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 116 'select' 'y_word_4' <Predicate = (and_ln95)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 117 [1/1] (1.56ns)   --->   "%icmp_ln96_1 = icmp_eq  i2 %ny_5, i2 0" [gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 117 'icmp' 'icmp_ln96_1' <Predicate = (and_ln95)> <Delay = 1.56> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node y_word_5)   --->   "%y_word_3 = select i1 %icmp_ln96_1, i16 %acc_6, i16 %y_word_2" [gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 118 'select' 'y_word_3' <Predicate = (and_ln95)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 119 [1/1] (0.80ns) (out node of the LUT)   --->   "%y_word_6 = select i1 %and_ln95, i16 %y_word_4, i16 %y_word_7" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 119 'select' 'y_word_6' <Predicate = true> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 120 [1/1] (0.80ns) (out node of the LUT)   --->   "%y_word_5 = select i1 %and_ln95, i16 %y_word_3, i16 %y_word_2" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 120 'select' 'y_word_5' <Predicate = true> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 121 [1/1] (1.56ns)   --->   "%icmp_ln96_2 = icmp_eq  i2 %ny_2, i2 1" [gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 121 'icmp' 'icmp_ln96_2' <Predicate = (and_ln95_1)> <Delay = 1.56> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 122 [1/1] (0.00ns) (grouped into LUT with out node y_word_11)   --->   "%y_word_9 = select i1 %icmp_ln96_2, i16 %acc_7, i16 %y_word_6" [gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 122 'select' 'y_word_9' <Predicate = (and_ln95_1)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 123 [1/1] (1.56ns)   --->   "%icmp_ln96_3 = icmp_eq  i2 %ny_2, i2 0" [gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 123 'icmp' 'icmp_ln96_3' <Predicate = (and_ln95_1)> <Delay = 1.56> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node y_word_10)   --->   "%y_word_8 = select i1 %icmp_ln96_3, i16 %acc_7, i16 %y_word_5" [gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 124 'select' 'y_word_8' <Predicate = (and_ln95_1)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 125 [1/1] (0.80ns) (out node of the LUT)   --->   "%y_word_11 = select i1 %and_ln95_1, i16 %y_word_9, i16 %y_word_6" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 125 'select' 'y_word_11' <Predicate = true> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 126 [1/1] (0.80ns) (out node of the LUT)   --->   "%y_word_10 = select i1 %and_ln95_1, i16 %y_word_8, i16 %y_word_5" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 126 'select' 'y_word_10' <Predicate = true> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 127 [1/1] (0.00ns)   --->   "%p_0_0_09352_load = load i16 %p_0_0_09352" [./include/int16_array_utils.h:207->./include/int16_array_utils.h:314->gen/../maxpool_body_impl.tpp:104->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 127 'load' 'p_0_0_09352_load' <Predicate = (icmp_ln102 & held_valid_load)> <Delay = 0.00>
+ST_4 : Operation 128 [1/1] (0.00ns)   --->   "%p_0_0_093_154_load = load i16 %p_0_0_093_154" [./include/int16_array_utils.h:207->./include/int16_array_utils.h:314->gen/../maxpool_body_impl.tpp:104->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 128 'load' 'p_0_0_093_154_load' <Predicate = (icmp_ln102 & held_valid_load)> <Delay = 0.00>
+ST_4 : Operation 129 [1/1] (0.00ns)   --->   "%w = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i16.i16, i16 %p_0_0_093_154_load, i16 %p_0_0_09352_load" [./include/int16_array_utils.h:207->./include/int16_array_utils.h:314->gen/../maxpool_body_impl.tpp:104->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 129 'bitconcatenate' 'w' <Predicate = (icmp_ln102 & held_valid_load)> <Delay = 0.00>
+ST_4 : Operation 130 [1/1] (1.29ns)   --->   "%write_ln153 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %m_out_V_data_V, i4 %m_out_V_keep_V, i4 %m_out_V_strb_V, i1 %m_out_V_last_V, i32 %w, i4 15, i4 15, i1 0" [.\include/streamutils_hls.h:153->./include/int16_array_utils.h:209->./include/int16_array_utils.h:314->gen/../maxpool_body_impl.tpp:104->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 130 'write' 'write_ln153' <Predicate = (icmp_ln102 & held_valid_load)> <Delay = 1.29> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
+ST_4 : Operation 131 [1/1] (0.00ns)   --->   "%br_ln105 = br void %for.body47.i.i" [gen/../maxpool_body_impl.tpp:105->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 131 'br' 'br_ln105' <Predicate = (icmp_ln102 & held_valid_load)> <Delay = 0.00>
+ST_4 : Operation 132 [1/1] (1.58ns)   --->   "%store_ln95 = store i16 %y_word_11, i16 %p_0_0_093_154" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 132 'store' 'store_ln95' <Predicate = (icmp_ln102)> <Delay = 1.58>
+ST_4 : Operation 133 [1/1] (1.58ns)   --->   "%store_ln95 = store i16 %y_word_10, i16 %p_0_0_09352" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 133 'store' 'store_ln95' <Predicate = (icmp_ln102)> <Delay = 1.58>
+ST_4 : Operation 134 [1/1] (0.00ns)   --->   "%br_ln112 = br void %if.end56.i.i" [gen/../maxpool_body_impl.tpp:112->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 134 'br' 'br_ln112' <Predicate = (icmp_ln102)> <Delay = 0.00>
+ST_4 : Operation 135 [1/1] (1.58ns)   --->   "%store_ln62 = store i16 %y_word_11, i16 %y_word_1" [gen/../maxpool_body_impl.tpp:62->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 135 'store' 'store_ln62' <Predicate = true> <Delay = 1.58>
+ST_4 : Operation 136 [1/1] (1.58ns)   --->   "%store_ln62 = store i16 %y_word_10, i16 %y_word" [gen/../maxpool_body_impl.tpp:62->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 136 'store' 'store_ln62' <Predicate = true> <Delay = 1.58>
+ST_4 : Operation 137 [1/1] (0.00ns)   --->   "%ny_load = load i2 %ny"   --->   Operation 137 'load' 'ny_load' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 138 [1/1] (0.00ns)   --->   "%held_valid_load_1 = load i1 %held_valid"   --->   Operation 138 'load' 'held_valid_load_1' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 139 [1/1] (0.00ns)   --->   "%p_0_0_09352_load_1 = load i16 %p_0_0_09352"   --->   Operation 139 'load' 'p_0_0_09352_load_1' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 140 [1/1] (0.00ns)   --->   "%p_0_0_093_154_load_1 = load i16 %p_0_0_093_154"   --->   Operation 140 'load' 'p_0_0_093_154_load_1' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 141 [1/1] (0.00ns)   --->   "%write_ln95 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %y_word_11_out, i16 %y_word_11" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 141 'write' 'write_ln95' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 142 [1/1] (0.00ns)   --->   "%write_ln95 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %y_word_10_out, i16 %y_word_10" [gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 142 'write' 'write_ln95' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 143 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0_093_153_out, i16 %p_0_0_093_154_load_1"   --->   Operation 143 'write' 'write_ln0' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 144 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0_09351_out, i16 %p_0_0_09352_load_1"   --->   Operation 144 'write' 'write_ln0' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 145 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i2P0A, i2 %ny_5_out, i2 %ny_load"   --->   Operation 145 'write' 'write_ln0' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 146 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i1P0A, i1 %held_valid_1_out, i1 %held_valid_load_1"   --->   Operation 146 'write' 'write_ln0' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 147 [1/1] (0.00ns)   --->   "%write_ln113 = write void @_ssdm_op_Write.ap_auto.i1P0A, i1 %early_1_out, i1 %early_1" [gen/../maxpool_body_impl.tpp:113->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 147 'write' 'write_ln113' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 148 [1/1] (0.00ns)   --->   "%write_ln113 = write void @_ssdm_op_Write.ap_auto.i1P0A, i1 %missing_1_out, i1 %missing_1" [gen/../maxpool_body_impl.tpp:113->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16]   --->   Operation 148 'write' 'write_ln113' <Predicate = (!or_cond36)> <Delay = 0.00>
+ST_4 : Operation 149 [1/1] (1.58ns)   --->   "%ret_ln0 = ret"   --->   Operation 149 'ret' 'ret_ln0' <Predicate = (!or_cond36)> <Delay = 1.58>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 6.587ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln80', gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) of constant 0 on local variable 'i', gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 [47]  (1.588 ns)
+	'load' operation 15 bit ('i', gen/../maxpool_body_impl.tpp:81->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) on local variable 'i', gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 [56]  (0.000 ns)
+	'add' operation 16 bit ('i', gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [145]  (1.944 ns)
+	'icmp' operation 1 bit ('icmp_ln80', gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [147]  (2.077 ns)
+	'and' operation 1 bit ('or_cond36', gen/../maxpool_body_impl.tpp:80->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [148]  (0.978 ns)
+
+ <State 2>: 13.660ns
+The critical path consists of the following:
+	'load' operation 4 bit ('a', gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) on local variable 'a', gen/../maxpool_body_impl.tpp:74->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 [54]  (0.000 ns)
+	'add' operation 4 bit ('a', gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [84]  (1.735 ns)
+	'icmp' operation 1 bit ('icmp_ln95', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [85]  (1.735 ns)
+	'and' operation 1 bit ('and_ln95', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [92]  (0.978 ns)
+	'sparsemux' operation 4 bit ('a', gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [97]  (1.588 ns)
+	'add' operation 4 bit ('a', gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [103]  (1.735 ns)
+	'icmp' operation 1 bit ('icmp_ln95_1', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [104]  (1.735 ns)
+	'and' operation 1 bit ('and_ln95_1', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [111]  (0.978 ns)
+	'sparsemux' operation 4 bit ('a', gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [116]  (1.588 ns)
+	'store' operation 0 bit ('store_ln74', gen/../maxpool_body_impl.tpp:74->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) of variable 'a', gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 on local variable 'a', gen/../maxpool_body_impl.tpp:74->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 [155]  (1.588 ns)
+
+ <State 3>: 9.308ns
+The critical path consists of the following:
+	'load' operation 16 bit ('acc') on local variable 'acc', gen/../maxpool_body_impl.tpp:73->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 [61]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln93_1', gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [81]  (2.077 ns)
+	'or' operation 1 bit ('or_ln93', gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [82]  (0.000 ns)
+	'select' operation 16 bit ('acc', gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [83]  (0.978 ns)
+	'select' operation 16 bit ('acc', ./include/int16_array_utils.h:150->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [91]  (0.805 ns)
+	'icmp' operation 1 bit ('icmp_ln93_3', gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [100]  (2.077 ns)
+	'or' operation 1 bit ('or_ln93_1', gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [101]  (0.000 ns)
+	'select' operation 16 bit ('acc', gen/../maxpool_body_impl.tpp:93->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [102]  (0.978 ns)
+	'select' operation 16 bit ('acc', ./include/int16_array_utils.h:153->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [110]  (0.805 ns)
+	'store' operation 0 bit ('store_ln73', gen/../maxpool_body_impl.tpp:73->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) of variable 'acc', ./include/int16_array_utils.h:153->./include/int16_array_utils.h:301->gen/../maxpool_body_impl.tpp:85->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 on local variable 'acc', gen/../maxpool_body_impl.tpp:73->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 [149]  (1.588 ns)
+
+ <State 4>: 4.763ns
+The critical path consists of the following:
+	'icmp' operation 1 bit ('icmp_ln96', gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [86]  (1.565 ns)
+	'select' operation 16 bit ('y_word', gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [87]  (0.000 ns)
+	'select' operation 16 bit ('y_word', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [93]  (0.805 ns)
+	'select' operation 16 bit ('y_word', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) [112]  (0.805 ns)
+	'store' operation 0 bit ('store_ln95', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16) of variable 'y_word', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:173->gen/maxpool.cpp:16 on local variable 'p_0_0_093_154' [133]  (1.588 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

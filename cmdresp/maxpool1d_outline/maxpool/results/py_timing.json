@@ -1,0 +1,11 @@
+{
+  "transaction_cycles": 239,
+  "transaction_seconds": 2.39e-06,
+  "clk_freq": 100000000.0,
+  "word_bw": 32,
+  "source": "py_sim",
+  "events": {
+    "proc_begin": 0.0,
+    "proc_end": 2.39e-06
+  }
+}

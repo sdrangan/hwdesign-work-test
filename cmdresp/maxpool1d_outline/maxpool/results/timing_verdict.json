@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "py_cycles": 239,
+  "cosim_cycles": 231,
+  "delta": 8,
+  "tolerance": 20,
+  "py_timing_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool1d_outline\\maxpool\\results\\py_timing.json",
+  "cosim_timing_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool1d_outline\\maxpool\\results\\cosim_timing.json"
+}

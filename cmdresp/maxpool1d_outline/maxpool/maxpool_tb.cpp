@@ -1,0 +1,73 @@
+// maxpool_tb.cpp -- the hand-written C++ testbench.
+//
+// Usage: maxpool_tb <data_dir> <stage> [scenario]
+//
+// <data_dir> is the scenario directory (data/w32).  <stage> is "csim" or "cosim".  The
+// scenarios run are those listed in <data_dir>/scenarios.txt for csim and
+// <data_dir>/scenarios_cosim.txt for cosim (the cosim list leaves out the scenarios that
+// queue input behind an error, which a co-simulated stream cannot leave unread), in order,
+// or just [scenario].  For each one the kernel is run once -- one ap_start:
+//
+//   1. poison the status registers, so a kernel that does not clear them (rule 5) fails;
+//   2. play the stimulus <data_dir>/<scenario>/in into fresh streams and call the kernel;
+//   3. record the response into <data_dir>/<scenario>/<stage>/, and the status in status.json;
+//   4. discard whatever a halted kernel left unread: the host's reset (rule 7).
+//
+// So one testbench run -- one csim, one cosim -- walks through every scenario, each error
+// activation followed by the fresh activation after it.  The output directories must
+// exist; the Python build step that runs this creates them.
+
+#include "gen/maxpool.hpp"
+#include "include/bundle_tb.h"
+
+#include <cstdio>
+#include <fstream>
+#include <string>
+
+int main(int argc, char** argv) {
+    if (argc < 3) {
+        std::fprintf(stderr, "usage: maxpool_tb <data_dir> <stage> [scenario]\n");
+        return 2;
+    }
+    const std::string root = argv[1];
+    const std::string stage = argv[2];
+    const std::string only = (argc > 3) ? argv[3] : "";
+    constexpr int W = 32;
+
+    std::ifstream list(root + (stage == "cosim" ? "/scenarios_cosim.txt" : "/scenarios.txt"));
+    std::string name;
+    int run = 0;
+    while (list >> name) {
+        if (!only.empty() && name != only) continue;
+        const std::string dir = root + "/" + name;
+
+        // 1. What a previous run would have left in the registers (maxpool.POISONED_STATUS).
+        ap_uint<1> halted = 1;
+        ap_uint<8> error = static_cast<unsigned int>(MaxpoolError::NO_TLAST_SAMP_IN);
+        ap_uint<16> tx_id = 0xFFFF;
+
+        // 2. One activation, on fresh streams.
+        hls::stream<streamutils::axi4s_word<W>> s_in, m_out;
+        wf::play_stream<W>(dir + "/in", s_in);
+        maxpool(s_in, m_out, halted, error, tx_id);
+
+        // 3. The response and the status.
+        wf::record_stream<W>(m_out, dir + "/" + stage);
+        std::ofstream st(dir + "/" + stage + "/status.json");
+        st << "{\"halted\": " << (int)halted << ", \"error\": " << (int)error
+           << ", \"tx_id\": " << (int)tx_id << "}\n";
+
+        // 4. The host resets the stream path: commands queued behind an error are dropped.
+        int dropped = 0;
+        while (!s_in.empty()) { s_in.read(); ++dropped; }
+
+        std::printf("scenario %-28s halted=%d error=%d tx_id=%d unread_words=%d\n",
+                    name.c_str(), (int)halted, (int)error, (int)tx_id, dropped);
+        ++run;
+    }
+    if (run == 0) {
+        std::fprintf(stderr, "no scenario ran (data_dir=%s, only=%s)\n", root.c_str(), only.c_str());
+        return 1;
+    }
+    return 0;
+}
