@@ -1,0 +1,261 @@
+
+
+================================================================
+== Vitis HLS Report for 'maxpool'
+================================================================
+* Date:           Mon Oct 12 14:18:49 2026
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        w32_proj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  9.066 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------+------------------------+---------+---------+-----------+----------+-----+-----+---------+
+        |                                   |                        |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+        |              Instance             |         Module         |   min   |   max   |    min    |    max   | min | max |   Type  |
+        +-----------------------------------+------------------------+---------+---------+-----------+----------+-----+-----+---------+
+        |grp_maxpool_Pipeline_WORDS_fu_476  |maxpool_Pipeline_WORDS  |        7|       71|  70.000 ns|  0.710 us|    7|   71|       no|
+        +-----------------------------------+------------------------+---------+---------+-----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- COMMANDS  |        ?|        ?|    3 ~ 80|          -|          -|     ?|        no|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    210|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|    -|     823|   1131|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       0|    420|    -|
+|Register         |        -|    -|     427|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|    1250|   1761|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|       1|      3|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------+------------------------+---------+----+-----+------+-----+
+    |              Instance             |         Module         | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +-----------------------------------+------------------------+---------+----+-----+------+-----+
+    |control_s_axi_U                    |control_s_axi           |        0|   0|   79|    90|    0|
+    |grp_maxpool_Pipeline_WORDS_fu_476  |maxpool_Pipeline_WORDS  |        0|   0|  744|  1041|    0|
+    +-----------------------------------+------------------------+---------+----+-----+------+-----+
+    |Total                              |                        |        0|   0|  823|  1131|    0|
+    +-----------------------------------+------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------------------------------+----------+----+---+----+------------+------------+
+    |                  Variable Name                 | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------------------------------+----------+----+---+----+------------+------------+
+    |add_ln178_1_fu_586_p2                           |         +|   0|  0|  15|           8|           2|
+    |add_ln178_fu_564_p2                             |         +|   0|  0|  23|          16|           2|
+    |add_ln59_fu_646_p2                              |         +|   0|  0|  24|          17|           1|
+    |sub20_i_i_fu_672_p2                             |         +|   0|  0|  14|           9|           2|
+    |sub89_i_i_fu_678_p2                             |         +|   0|  0|  20|          15|           2|
+    |ap_block_state4                                 |       and|   0|  0|   2|           1|           1|
+    |ap_block_state8                                 |       and|   0|  0|   2|           1|           1|
+    |ap_predicate_op81_write_state4                  |       and|   0|  0|   2|           1|           1|
+    |grp_maxpool_Pipeline_WORDS_fu_476_m_out_TREADY  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln178_1_fu_602_p2                          |      icmp|   0|  0|  13|           5|           1|
+    |icmp_ln178_fu_580_p2                            |      icmp|   0|  0|  14|           9|           1|
+    |icmp_ln179_fu_626_p2                            |      icmp|   0|  0|  23|          16|          16|
+    |icmp_ln184_fu_760_p2                            |      icmp|   0|  0|  15|           8|           1|
+    |icmp_ln82_fu_685_p2                             |      icmp|   0|  0|  23|          16|           1|
+    |ap_block_state10                                |        or|   0|  0|   2|           1|           1|
+    |ap_block_state9                                 |        or|   0|  0|   2|           1|           1|
+    |ap_condition_367                                |        or|   0|  0|   2|           1|           1|
+    |ap_condition_371                                |        or|   0|  0|   2|           1|           1|
+    |ap_predicate_op116_write_state8                 |        or|   0|  0|   2|           1|           1|
+    |ap_predicate_op117_write_state9                 |        or|   0|  0|   2|           1|           1|
+    |ap_predicate_op129_write_state9                 |        or|   0|  0|   2|           1|           1|
+    |ap_predicate_op131_write_state10                |        or|   0|  0|   2|           1|           1|
+    |or_ln178_fu_608_p2                              |        or|   0|  0|   2|           1|           1|
+    +------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                           |          |   0|  0| 210|         132|          42|
+    +------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |                    Name                   | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                  |  59|         11|    1|         11|
+    |ap_phi_mux_err_i_312_ph_phi_fu_467_p4      |   9|          2|    8|         16|
+    |ap_phi_mux_err_phi_fu_418_p12              |   9|          2|    8|         16|
+    |ap_phi_mux_p_0_0_015_ph_phi_fu_455_p4      |   9|          2|   16|         32|
+    |ap_phi_mux_p_0_0_06063686_phi_fu_308_p4    |  14|          3|   16|         48|
+    |ap_phi_mux_p_0_0_060_166718_phi_fu_299_p4  |  14|          3|   16|         48|
+    |ap_phi_mux_p_ph_phi_fu_442_p4              |   9|          2|    1|          2|
+    |ap_phi_mux_pend_1_i_i4_phi_fu_317_p4       |  14|          3|    1|          3|
+    |ap_phi_mux_w_10_phi_fu_392_p4              |  14|          3|   32|         96|
+    |err_i_312_ph_reg_463                       |   9|          2|    8|         16|
+    |err_reg_411                                |  31|          6|    8|         48|
+    |m_out_TDATA_blk_n                          |   9|          2|    1|          2|
+    |m_out_TDATA_int_regslice                   |  25|          5|   32|        160|
+    |m_out_TKEEP_int_regslice                   |  14|          3|    4|         12|
+    |m_out_TLAST_int_regslice                   |  20|          4|    1|          4|
+    |m_out_TSTRB_int_regslice                   |  14|          3|    4|         12|
+    |m_out_TVALID_int_regslice                  |  14|          3|    1|          3|
+    |p_0_0_015_ph_reg_451                       |   9|          2|   16|         32|
+    |p_lane_1_reg_334                           |  14|          3|   16|         48|
+    |p_lane_reg_347                             |  14|          3|   16|         48|
+    |pend_1_i_i4_reg_314                        |   9|          2|    1|          2|
+    |pend_reg_374                               |  14|          3|    1|          3|
+    |ref_tmp30_i_22_reg_324                     |   9|          2|    8|         16|
+    |ref_tmp30_i_3172176179_reg_400             |   9|          2|    8|         16|
+    |ref_tmp30_i_3172_reg_360                   |  14|          3|    8|         24|
+    |s_in_TDATA_blk_n                           |   9|          2|    1|          2|
+    |s_in_TREADY_int_regslice                   |  14|          3|    1|          3|
+    |tl_1_reg_274                               |   9|          2|    2|          4|
+    |w_reg_286                                  |   9|          2|   16|         32|
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |Total                                      | 420|         88|  252|        759|
+    +-------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------+----+----+-----+-----------+
+    |                      Name                      | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                       |  10|   0|   10|          0|
+    |axis_word_data_reg_838                          |  32|   0|   32|          0|
+    |cmd_hdr_cmd_type_reg_846                        |   8|   0|    8|          0|
+    |cmd_hdr_k_2_reg_263                             |   8|   0|    8|          0|
+    |cmd_hdr_n_2_reg_251                             |  16|   0|   16|          0|
+    |cmd_hdr_tx_id_reg_851                           |  16|   0|   16|          0|
+    |err_1_loc_fu_150                                |   8|   0|    8|          0|
+    |err_i_312_ph_reg_463                            |   8|   0|    8|          0|
+    |err_loc_fu_174                                  |   8|   0|    8|          0|
+    |err_reg_411                                     |   8|   0|    8|          0|
+    |grp_maxpool_Pipeline_WORDS_fu_476_ap_start_reg  |   1|   0|    1|          0|
+    |icmp_ln179_reg_885                              |   1|   0|    1|          0|
+    |icmp_ln82_reg_909                               |   1|   0|    1|          0|
+    |m_out_TDATA_reg                                 |  32|   0|   32|          0|
+    |m_out_TKEEP_reg                                 |   4|   0|    4|          0|
+    |m_out_TLAST_reg                                 |   1|   0|    1|          0|
+    |m_out_TSTRB_reg                                 |   4|   0|    4|          0|
+    |nwords_reg_894                                  |  16|   0|   16|          0|
+    |or_ln178_reg_871                                |   1|   0|    1|          0|
+    |p_0_0_015_ph_reg_451                            |  16|   0|   16|          0|
+    |p_0_0_0606369_loc_fu_186                        |  16|   0|   16|          0|
+    |p_0_0_060_16672_loc_fu_190                      |  16|   0|   16|          0|
+    |p_lane_1_loc_fu_162                             |  16|   0|   16|          0|
+    |p_lane_1_reg_334                                |  16|   0|   16|          0|
+    |p_lane_loc_fu_158                               |  16|   0|   16|          0|
+    |p_lane_reg_347                                  |  16|   0|   16|          0|
+    |p_ph_reg_438                                    |   1|   0|    1|          0|
+    |pend_1_i_i4_reg_314                             |   1|   0|    1|          0|
+    |pend_1_loc_fu_154                               |   1|   0|    1|          0|
+    |pend_loc_fu_182                                 |   1|   0|    1|          0|
+    |pend_reg_374                                    |   1|   0|    1|          0|
+    |ref_tmp30_i_22_reg_324                          |   8|   0|    8|          0|
+    |ref_tmp30_i_3172176179_reg_400                  |   8|   0|    8|          0|
+    |ref_tmp30_i_3172_reg_360                        |   8|   0|    8|          0|
+    |sub20_i_i_reg_899                               |   9|   0|    9|          0|
+    |sub89_i_i_reg_904                               |  15|   0|   15|          0|
+    |targetBlock_reg_913                             |   1|   0|    1|          0|
+    |tl_1_reg_274                                    |   2|   0|    2|          0|
+    |w_reg_286                                       |  16|   0|   16|          0|
+    |y_half_4_loc_fu_170                             |  16|   0|   16|          0|
+    |y_half_loc_fu_194                               |  16|   0|   16|          0|
+    |y_has_2_i_i170_loc_fu_166                       |   1|   0|    1|          0|
+    |y_has_2_i_i170_loc_load_reg_933                 |   1|   0|    1|          0|
+    |y_has_loc_fu_178                                |   1|   0|    1|          0|
+    |y_has_loc_load_reg_926                          |   1|   0|    1|          0|
+    |zext_ln179_2_reg_880                            |  16|   0|   17|          1|
+    |zext_ln179_reg_875                              |   8|   0|    9|          1|
+    +------------------------------------------------+----+----+-----+-----------+
+    |Total                                           | 427|   0|  429|          2|
+    +------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+----------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-----------------------+-----+-----+------------+----------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|         control|       pointer|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|         control|       pointer|
+|s_axi_control_AWADDR   |   in|    6|       s_axi|         control|       pointer|
+|s_axi_control_WVALID   |   in|    1|       s_axi|         control|       pointer|
+|s_axi_control_WREADY   |  out|    1|       s_axi|         control|       pointer|
+|s_axi_control_WDATA    |   in|   32|       s_axi|         control|       pointer|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|         control|       pointer|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|         control|       pointer|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|         control|       pointer|
+|s_axi_control_ARADDR   |   in|    6|       s_axi|         control|       pointer|
+|s_axi_control_RVALID   |  out|    1|       s_axi|         control|       pointer|
+|s_axi_control_RREADY   |   in|    1|       s_axi|         control|       pointer|
+|s_axi_control_RDATA    |  out|   32|       s_axi|         control|       pointer|
+|s_axi_control_RRESP    |  out|    2|       s_axi|         control|       pointer|
+|s_axi_control_BVALID   |  out|    1|       s_axi|         control|       pointer|
+|s_axi_control_BREADY   |   in|    1|       s_axi|         control|       pointer|
+|s_axi_control_BRESP    |  out|    2|       s_axi|         control|       pointer|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|         maxpool|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|         maxpool|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|         maxpool|  return value|
+|s_in_TDATA             |   in|   32|        axis|   s_in_V_data_V|       pointer|
+|s_in_TVALID            |   in|    1|        axis|   s_in_V_last_V|       pointer|
+|s_in_TREADY            |  out|    1|        axis|   s_in_V_last_V|       pointer|
+|s_in_TLAST             |   in|    1|        axis|   s_in_V_last_V|       pointer|
+|s_in_TKEEP             |   in|    4|        axis|   s_in_V_keep_V|       pointer|
+|s_in_TSTRB             |   in|    4|        axis|   s_in_V_strb_V|       pointer|
+|m_out_TDATA            |  out|   32|        axis|  m_out_V_data_V|       pointer|
+|m_out_TVALID           |  out|    1|        axis|  m_out_V_last_V|       pointer|
+|m_out_TREADY           |   in|    1|        axis|  m_out_V_last_V|       pointer|
+|m_out_TLAST            |  out|    1|        axis|  m_out_V_last_V|       pointer|
+|m_out_TKEEP            |  out|    4|        axis|  m_out_V_keep_V|       pointer|
+|m_out_TSTRB            |  out|    4|        axis|  m_out_V_strb_V|       pointer|
++-----------------------+-----+-----+------------+----------------+--------------+
+

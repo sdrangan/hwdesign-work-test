@@ -1,0 +1,146 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2025.1 (64-bit)
+Tool Version Limit: 2025.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.475 seconds; current allocated memory: 146.555 MB.
+INFO: [HLS 200-10] Analyzing design file 'gen/maxpool.cpp' ... 
+WARNING: [HLS 207-1421] constexpr if is a C++17 extension (./include/int16_array_utils.h:357:8)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.965 seconds; current allocated memory: 150.734 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 2,944 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 645 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 463 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 446 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 393 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 319 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 273 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 273 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 273 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 490 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 502 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 473 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 358 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 358 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 309 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 224 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/w32_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'int16_array_utils::read_axi4_stream_elem_impl<32>::run(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_int<16>*, streamutils::tlast_status&, int)' into 'void int16_array_utils::read_axi4_stream_lane<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_int<16>*, int, streamutils::tlast_status&)' (./include/int16_array_utils.h:301:2)
+INFO: [HLS 214-131] Inlining function 'int16_array_utils::write_axi4_stream_elem_impl<32>::run(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_int<16> const*, bool, int)' into 'void int16_array_utils::write_axi4_stream_lane<32>(ap_int<16> const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool, int)' (./include/int16_array_utils.h:314:2)
+INFO: [HLS 214-131] Inlining function 'void int16_array_utils::write_axi4_stream_lane<32>(ap_int<16> const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool, int)' into 'ap_uint<8> maxpool_impl::compute<32, 32>(MaxpoolCmdHdr const&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (gen/../maxpool_body_impl.tpp:149:9)
+INFO: [HLS 214-131] Inlining function 'maxpool_impl::code(MaxpoolError)' into 'ap_uint<8> maxpool_impl::compute<32, 32>(MaxpoolCmdHdr const&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (gen/../maxpool_body_impl.tpp:134:19)
+INFO: [HLS 214-131] Inlining function 'void int16_array_utils::read_axi4_stream_lane<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_int<16>*, int, streamutils::tlast_status&)' into 'ap_uint<8> maxpool_impl::compute<32, 32>(MaxpoolCmdHdr const&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (gen/../maxpool_body_impl.tpp:88:9)
+INFO: [HLS 214-131] Inlining function 'maxpool_impl::code(MaxpoolError)' into 'void maxpool_impl::body<32, 32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/../maxpool_body_impl.tpp:184:20)
+INFO: [HLS 214-131] Inlining function 'ap_uint<8> maxpool_impl::compute<32, 32>(MaxpoolCmdHdr const&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' into 'void maxpool_impl::body<32, 32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/../maxpool_body_impl.tpp:182:19)
+INFO: [HLS 214-131] Inlining function 'void maxpool_impl::body<32, 32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' into 'maxpool(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/maxpool.cpp:16:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_121_2' is marked as complete unroll implied by the pipeline pragma (gen/../maxpool_body_impl.tpp:121:31)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_67_1' (gen/../maxpool_body_impl.tpp:67:19) in function 'maxpool' completely with a factor of 2 (gen/maxpool.cpp:9:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_121_2' (gen/../maxpool_body_impl.tpp:121:31) in function 'maxpool' completely with a factor of 2 (gen/maxpool.cpp:9:0)
+INFO: [HLS 214-178] Inlining function 'MaxpoolCmdHdr::read_axi4_stream_impl(MaxpoolCmdHdr::word_bw_tag<32>, MaxpoolCmdHdr*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void MaxpoolCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (./include/maxpool_cmd_hdr.h:221:0)
+INFO: [HLS 214-178] Inlining function 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'MaxpoolRespHdr::write_axi4_stream_impl(MaxpoolRespHdr::word_bw_tag<32>, MaxpoolRespHdr const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool)' (./include/maxpool_resp_hdr.h:91:0)
+INFO: [HLS 214-178] Inlining function 'MaxpoolRespHdr::write_axi4_stream_impl(MaxpoolRespHdr::word_bw_tag<32>, MaxpoolRespHdr const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool)' into 'void MaxpoolRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' (./include/maxpool_resp_hdr.h:98:0)
+INFO: [HLS 214-178] Inlining function 'void MaxpoolCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'maxpool(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/maxpool.cpp:9:0)
+INFO: [HLS 214-178] Inlining function 'void MaxpoolRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' into 'maxpool(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/maxpool.cpp:9:0)
+INFO: [HLS 214-178] Inlining function 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'maxpool(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/maxpool.cpp:9:0)
+INFO: [HLS 214-248] Applying array_partition to 'x_lane.i.i': Complete partitioning on dimension 1. (gen/../maxpool_body_impl.tpp:61:20)
+INFO: [HLS 214-248] Applying array_partition to 'p_lane.i.i': Complete partitioning on dimension 1. (gen/../maxpool_body_impl.tpp:62:20)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 12.36 seconds; current allocated memory: 152.867 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.004 seconds; current allocated memory: 152.867 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.096 seconds; current allocated memory: 158.223 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.067 seconds; current allocated memory: 160.637 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.136 seconds; current allocated memory: 182.734 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'COMMANDS' (gen/../maxpool_body_impl.tpp:164:5) in function 'maxpool' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.145 seconds; current allocated memory: 186.578 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'maxpool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'maxpool_Pipeline_WORDS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'WORDS'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'icmp' operation 1 bit ('icmp_ln94_1', gen/../maxpool_body_impl.tpp:94->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) to 'store' operation 0 bit ('acc_write_ln73', gen/../maxpool_body_impl.tpp:73->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) of variable 'acc', gen/../maxpool_body_impl.tpp:100->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16 on local variable 'acc', gen/../maxpool_body_impl.tpp:73->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16 (combination delay: 8.503 ns) to honor II or Latency constraint in region 'WORDS'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'icmp' operation 1 bit ('d0', gen/../maxpool_body_impl.tpp:95->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) to 'store' operation 0 bit ('a_write_ln75', gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) of variable 'a', gen/../maxpool_body_impl.tpp:99->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16 on local variable 'a', gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16 (combination delay: 9.066 ns) to honor II or Latency constraint in region 'WORDS'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'WORDS'
+WARNING: [HLS 200-871] Estimated clock period (9.066 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+WARNING: [HLS 200-1016] The critical path in module 'maxpool_Pipeline_WORDS' consists of the following:
+	'load' operation 32 bit ('a_load', gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) on local variable 'a', gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16 [81]  (0.000 ns)
+	'add' operation 32 bit ('add_ln96', gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) [89]  (2.552 ns)
+	'select' operation 32 bit ('a1', gen/../maxpool_body_impl.tpp:96->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) [90]  (0.698 ns)
+	'icmp' operation 1 bit ('icmp_ln98', gen/../maxpool_body_impl.tpp:98->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) [95]  (2.552 ns)
+	'and' operation 1 bit ('d1', gen/../maxpool_body_impl.tpp:98->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) [96]  (0.978 ns)
+	'select' operation 32 bit ('select_ln99', gen/../maxpool_body_impl.tpp:99->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) [98]  (0.000 ns)
+	'select' operation 32 bit ('a', gen/../maxpool_body_impl.tpp:99->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) [99]  (0.698 ns)
+	'store' operation 0 bit ('a_write_ln75', gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16) of variable 'a', gen/../maxpool_body_impl.tpp:99->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16 on local variable 'a', gen/../maxpool_body_impl.tpp:75->gen/../maxpool_body_impl.tpp:182->gen/maxpool.cpp:16 [141]  (1.588 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.588 seconds; current allocated memory: 190.301 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.042 seconds; current allocated memory: 191.328 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'maxpool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 191.938 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.027 seconds; current allocated memory: 192.383 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'maxpool_Pipeline_WORDS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'maxpool_Pipeline_WORDS'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 194.352 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'maxpool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/s_in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/s_in_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/s_in_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/s_in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/m_out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/m_out_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/m_out_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/m_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/halted' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/error' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'maxpool/tx_id' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'maxpool' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'halted', 'error', 'tx_id' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'maxpool'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.334 seconds; current allocated memory: 198.625 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.62 seconds; current allocated memory: 203.871 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.949 seconds; current allocated memory: 208.309 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for maxpool.
+INFO: [VLOG 209-307] Generating Verilog RTL for maxpool.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 110.30 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:23; Allocated memory: 62.094 MB.
+INFO: [HLS 200-1510] Running: cosim_design -argv C:/Users/sdran/Documents/repos/waveflow_blind_tests/maxpool1d_r2/maxpool/data/w32 cosim 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:30; Allocated memory: 11.789 MB.

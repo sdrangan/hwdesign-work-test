@@ -1,0 +1,196 @@
+{
+  "checks": {
+    "model": {
+      "w32/worked": true,
+      "w32/limits": true,
+      "w32/random_multi": true,
+      "w32/timing": true,
+      "w32/err_unknown_cmd": true,
+      "w32/fresh_after_unknown_cmd": true,
+      "w32/err_n_zero": true,
+      "w32/fresh_after_n_zero": true,
+      "w32/err_n_too_big": true,
+      "w32/fresh_after_n_too_big": true,
+      "w32/err_k_zero": true,
+      "w32/fresh_after_k_zero": true,
+      "w32/err_k_too_big": true,
+      "w32/fresh_after_k_too_big": true,
+      "w32/err_k_gt_n": true,
+      "w32/fresh_after_k_gt_n": true,
+      "w32/err_hdr_early_tlast": true,
+      "w32/fresh_after_hdr_early_tlast": true,
+      "w32/err_hdr_no_tlast": true,
+      "w32/fresh_after_hdr_no_tlast": true,
+      "w32/err_end_no_tlast": true,
+      "w32/fresh_after_end_no_tlast": true,
+      "w32/err_sig_early_tlast": true,
+      "w32/fresh_after_sig_early_tlast": true,
+      "w32/err_sig_early_tlast_no_window": true,
+      "w32/fresh_after_sig_early_tlast_no_window": true,
+      "w32/err_sig_no_tlast": true,
+      "w32/fresh_after_sig_no_tlast": true
+    },
+    "pysim": {
+      "w32/worked": true,
+      "w32/limits": true,
+      "w32/random_multi": true,
+      "w32/timing": true,
+      "w32/err_unknown_cmd": true,
+      "w32/fresh_after_unknown_cmd": true,
+      "w32/err_n_zero": true,
+      "w32/fresh_after_n_zero": true,
+      "w32/err_n_too_big": true,
+      "w32/fresh_after_n_too_big": true,
+      "w32/err_k_zero": true,
+      "w32/fresh_after_k_zero": true,
+      "w32/err_k_too_big": true,
+      "w32/fresh_after_k_too_big": true,
+      "w32/err_k_gt_n": true,
+      "w32/fresh_after_k_gt_n": true,
+      "w32/fresh_after_hdr_early_tlast": true,
+      "w32/fresh_after_hdr_no_tlast": true,
+      "w32/fresh_after_end_no_tlast": true,
+      "w32/err_sig_early_tlast": true,
+      "w32/fresh_after_sig_early_tlast": true,
+      "w32/err_sig_early_tlast_no_window": true,
+      "w32/fresh_after_sig_early_tlast_no_window": true,
+      "w32/fresh_after_sig_no_tlast": true
+    },
+    "csim": {
+      "w32/worked": true,
+      "w32/limits": true,
+      "w32/random_multi": true,
+      "w32/timing": true,
+      "w32/err_unknown_cmd": true,
+      "w32/fresh_after_unknown_cmd": true,
+      "w32/err_n_zero": true,
+      "w32/fresh_after_n_zero": true,
+      "w32/err_n_too_big": true,
+      "w32/fresh_after_n_too_big": true,
+      "w32/err_k_zero": true,
+      "w32/fresh_after_k_zero": true,
+      "w32/err_k_too_big": true,
+      "w32/fresh_after_k_too_big": true,
+      "w32/err_k_gt_n": true,
+      "w32/fresh_after_k_gt_n": true,
+      "w32/err_hdr_early_tlast": true,
+      "w32/fresh_after_hdr_early_tlast": true,
+      "w32/err_hdr_no_tlast": true,
+      "w32/fresh_after_hdr_no_tlast": true,
+      "w32/err_end_no_tlast": true,
+      "w32/fresh_after_end_no_tlast": true,
+      "w32/err_sig_early_tlast": true,
+      "w32/fresh_after_sig_early_tlast": true,
+      "w32/err_sig_early_tlast_no_window": true,
+      "w32/fresh_after_sig_early_tlast_no_window": true,
+      "w32/err_sig_no_tlast": true,
+      "w32/fresh_after_sig_no_tlast": true
+    },
+    "cosim": {
+      "w32/worked": true,
+      "w32/limits": true,
+      "w32/random_multi": true,
+      "w32/timing": true,
+      "w32/err_unknown_cmd": true,
+      "w32/fresh_after_unknown_cmd": true,
+      "w32/err_n_zero": true,
+      "w32/fresh_after_n_zero": true,
+      "w32/err_n_too_big": true,
+      "w32/fresh_after_n_too_big": true,
+      "w32/err_k_zero": true,
+      "w32/fresh_after_k_zero": true,
+      "w32/err_k_too_big": true,
+      "w32/fresh_after_k_too_big": true,
+      "w32/err_k_gt_n": true,
+      "w32/fresh_after_k_gt_n": true,
+      "w32/err_hdr_early_tlast": true,
+      "w32/fresh_after_hdr_early_tlast": true,
+      "w32/err_hdr_no_tlast": true,
+      "w32/fresh_after_hdr_no_tlast": true,
+      "w32/err_end_no_tlast": true,
+      "w32/fresh_after_end_no_tlast": true,
+      "w32/err_sig_early_tlast": true,
+      "w32/fresh_after_sig_early_tlast": true,
+      "w32/err_sig_early_tlast_no_window": true,
+      "w32/fresh_after_sig_early_tlast_no_window": true,
+      "w32/err_sig_no_tlast": true,
+      "w32/fresh_after_sig_no_tlast": true
+    }
+  },
+  "cosim_timing": {
+    "w32": {
+      "transaction_cycles": 6,
+      "report_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool1d_r2\\maxpool\\w32_proj\\solution1\\sim\\report\\maxpool_cosim.rpt",
+      "vitis_version": "2025.1+",
+      "source": "cosim",
+      "top": "maxpool"
+    }
+  },
+  "loops": {
+    "w32": "PipelineII,PipelineDepth,TripCountMin,TripCountMax,LatencyMin,LatencyMax\n1,5,1,64,5,68\n,3 ~ 80,,,,\n"
+  },
+  "resources": {
+    "w32": {
+      "top_name": "maxpool",
+      "top": {
+        "bram": 0,
+        "ff": 1250,
+        "lut": 1761,
+        "dsp": 0,
+        "uram": 0
+      },
+      "available": {
+        "bram": 280,
+        "dsp": 220,
+        "ff": 106400,
+        "lut": 53200,
+        "uram": 0
+      },
+      "modules": [
+        {
+          "key": "maxpool_accel-d675c2bb",
+          "path": "maxpool",
+          "cls_name": "MaxpoolAccel",
+          "rtl_module": "maxpool",
+          "resources": {
+            "bram": 0,
+            "ff": 1250,
+            "lut": 1761,
+            "dsp": 0,
+            "uram": 0
+          },
+          "subblocks": {
+            "maxpool_Pipeline_WORDS": {
+              "ff": 744,
+              "lut": 1041,
+              "bram": 0,
+              "dsp": 0,
+              "uram": 0
+            }
+          }
+        }
+      ],
+      "unclaimed": {},
+      "module_sum": {
+        "lut": 1761,
+        "ff": 1250,
+        "dsp": 0,
+        "bram": 0,
+        "uram": 0
+      },
+      "integration": {
+        "bram": 0,
+        "dsp": 0,
+        "ff": 0,
+        "lut": 0,
+        "uram": 0
+      },
+      "params": {
+        "in_bw": 32,
+        "out_bw": 32
+      },
+      "synth_seconds": 0.0,
+      "filed_into": null
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema_name": "MaxpoolRespHdr",
+  "input_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool1d\\maxpool\\tools\\schemas_shim.py",
+  "ok": true,
+  "summary": "Schema is valid with 1 warning.",
+  "errors": [],
+  "warnings": [
+    {
+      "message": "Multiple schema classes were found. schema_info describes the first discovered schema class.",
+      "code": "multiple_schema_classes",
+      "location": {
+        "line": 29,
+        "column": null,
+        "path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool1d\\maxpool\\tools\\schemas_shim.py"
+      }
+    }
+  ],
+  "schema_info": {
+    "name": "MaxpoolCmdHdr",
+    "kind": "DataList",
+    "field_count": 4,
+    "field_names": [
+      "cmd_type",
+      "tx_id",
+      "n",
+      "k"
+    ]
+  }
+}

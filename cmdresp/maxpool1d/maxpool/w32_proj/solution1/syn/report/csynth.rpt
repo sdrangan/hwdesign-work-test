@@ -1,0 +1,256 @@
+
+
+================================================================
+== Synthesis Summary Report of 'maxpool'
+================================================================
++ General Information: 
+    * Date:           Mon Oct 12 14:18:49 2026
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        w32_proj
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------+---------+-------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |           Modules          |  Issue  |       |      Latency      | Iteration|         | Trip |          |      |    |           |           |     |
+    |           & Loops          |   Type  | Slack | (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +----------------------------+---------+-------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ maxpool                   |   Timing|  -1.77|        -|        -|         -|        -|     -|        no|     -|   -|  1250 (1%)|  1761 (3%)|    -|
+    | o COMMANDS                 |        -|   7.30|        -|        -|        80|        -|     -|        no|     -|   -|          -|          -|    -|
+    |  + maxpool_Pipeline_WORDS  |   Timing|  -1.77|       71|  710.000|         -|       71|     -|        no|     -|   -|  744 (~0%)|  1041 (1%)|    -|
+    |   o WORDS                  |        -|   7.30|       68|  680.000|         5|        1|    64|       yes|     -|   -|          -|          -|    -|
+    +----------------------------+---------+-------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register    | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL        | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER        | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER      | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR      | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | halted      | 0x10   | 32    | R      | Data signal of halted            |                                                                      |
+| s_axi_control | halted_ctrl | 0x14   | 32    | R      | Control signal of halted         | 0=halted_ap_vld                                                      |
+| s_axi_control | error       | 0x20   | 32    | R      | Data signal of error             |                                                                      |
+| s_axi_control | error_ctrl  | 0x24   | 32    | R      | Control signal of error          | 0=error_ap_vld                                                       |
+| s_axi_control | tx_id       | 0x30   | 32    | R      | Data signal of tx_id             |                                                                      |
+| s_axi_control | tx_id_ctrl  | 0x34   | 32    | R      | Control signal of tx_id          | 0=tx_id_ap_vld                                                       |
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| m_out     | out       | both          | 32    | 4     | 1     | 1      | 4     | 1      |
+| s_in      | in        | both          | 32    | 4     | 1     | 1      | 4     | 1      |
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+--------------------------------------------------------+
+| Argument | Direction | Datatype                                               |
++----------+-----------+--------------------------------------------------------+
+| s_in     | in        | stream<hls::axis<ap_int<32>, 0, 0, 0, '8', false>, 0>& |
+| m_out    | out       | stream<hls::axis<ap_int<32>, 0, 0, 0, '8', false>, 0>& |
+| halted   | out       | ap_uint<1>&                                            |
+| error    | out       | ap_uint<8>&                                            |
+| tx_id    | out       | ap_uint<16>&                                           |
++----------+-----------+--------------------------------------------------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+---------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Info                               |
++----------+---------------+-----------+---------------------------------------+
+| s_in     | s_in          | interface |                                       |
+| m_out    | m_out         | interface |                                       |
+| halted   | s_axi_control | register  | name=halted offset=0x10 range=32      |
+| halted   | s_axi_control | register  | name=halted_ctrl offset=0x14 range=32 |
+| error    | s_axi_control | register  | name=error offset=0x20 range=32       |
+| error    | s_axi_control | register  | name=error_ctrl offset=0x24 range=32  |
+| tx_id    | s_axi_control | register  | name=tx_id offset=0x30 range=32       |
+| tx_id    | s_axi_control | register  | name=tx_id_ctrl offset=0x34 range=32  |
++----------+---------------+-----------+---------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------+-----+--------+--------------+--------+----------+---------+
+| Name                      | DSP | Pragma | Variable     | Op     | Impl     | Latency |
++---------------------------+-----+--------+--------------+--------+----------+---------+
+| + maxpool                 | 0   |        |              |        |          |         |
+|   add_ln178_fu_564_p2     |     |        | add_ln178    | add    | fabric   | 0       |
+|   icmp_ln178_fu_580_p2    |     |        | icmp_ln178   | setne  | auto     | 0       |
+|   add_ln178_1_fu_586_p2   |     |        | add_ln178_1  | add    | fabric   | 0       |
+|   icmp_ln178_1_fu_602_p2  |     |        | icmp_ln178_1 | setne  | auto     | 0       |
+|   or_ln178_fu_608_p2      |     |        | or_ln178     | or     | auto     | 0       |
+|   icmp_ln179_fu_626_p2    |     |        | icmp_ln179   | setgt  | auto     | 0       |
+|   add_ln59_fu_646_p2      |     |        | add_ln59     | add    | fabric   | 0       |
+|   sub20_i_i_fu_672_p2     |     |        | sub20_i_i    | add    | fabric   | 0       |
+|   sub89_i_i_fu_678_p2     |     |        | sub89_i_i    | add    | fabric   | 0       |
+|   icmp_ln82_fu_685_p2     |     |        | icmp_ln82    | seteq  | auto     | 0       |
+|   icmp_ln184_fu_760_p2    |     |        | icmp_ln184   | seteq  | auto     | 0       |
+|  + maxpool_Pipeline_WORDS | 0   |        |              |        |          |         |
+|    icmp_ln82_fu_452_p2    |     |        | icmp_ln82    | setlt  | auto     | 0       |
+|    i_2_fu_457_p2          |     |        | i_2          | add    | fabric   | 0       |
+|    nrem_fu_477_p2         |     |        | nrem         | sub    | fabric   | 0       |
+|    has1_fu_492_p2         |     |        | has1         | setgt  | auto     | 0       |
+|    icmp_ln94_fu_545_p2    |     |        | icmp_ln94    | seteq  | auto     | 0       |
+|    icmp_ln94_1_fu_615_p2  |     |        | icmp_ln94_1  | setgt  | auto     | 0       |
+|    or_ln94_fu_620_p2      |     |        | or_ln94      | or     | auto     | 0       |
+|    r0_fu_625_p3           |     |        | r0           | select | auto_sel | 0       |
+|    d0_fu_551_p2           |     |        | d0           | seteq  | auto     | 0       |
+|    add_ln96_fu_556_p2     |     |        | add_ln96     | add    | fabric   | 0       |
+|    a1_fu_562_p3           |     |        | a1           | select | auto_sel | 0       |
+|    icmp_ln97_fu_570_p2    |     |        | icmp_ln97    | seteq  | auto     | 0       |
+|    icmp_ln97_1_fu_632_p2  |     |        | icmp_ln97_1  | setgt  | auto     | 0       |
+|    or_ln97_fu_637_p2      |     |        | or_ln97      | or     | auto     | 0       |
+|    r1_fu_642_p3           |     |        | r1           | select | auto_sel | 0       |
+|    icmp_ln98_fu_576_p2    |     |        | icmp_ln98    | seteq  | auto     | 0       |
+|    d1_fu_581_p2           |     |        | d1           | and    | auto     | 0       |
+|    add_ln99_fu_586_p2     |     |        | add_ln99     | add    | fabric   | 0       |
+|    select_ln99_fu_592_p3  |     |        | select_ln99  | select | auto_sel | 0       |
+|    a_1_fu_600_p3          |     |        | a_1          | select | auto_sel | 0       |
+|    acc_1_fu_649_p3        |     |        | acc_1        | select | auto_sel | 0       |
+|    first_fu_668_p3        |     |        | first        | select | auto_sel | 0       |
+|    and_ln105_fu_656_p2    |     |        | and_ln105    | and    | auto     | 0       |
+|    or_ln110_fu_674_p2     |     |        | or_ln110     | or     | auto     | 0       |
+|    select_ln106_fu_678_p3 |     |        | select_ln106 | select | auto_sel | 0       |
+|    select_ln107_fu_685_p3 |     |        | select_ln107 | select | auto_sel | 0       |
+|    final_word_fu_523_p2   |     |        | final_word   | setne  | auto     | 0       |
+|    and_ln129_fu_528_p2    |     |        | and_ln129    | and    | auto     | 0       |
+|    select_ln129_fu_699_p3 |     |        | select_ln129 | select | auto_sel | 0       |
+|    select_ln133_fu_706_p3 |     |        | select_ln133 | select | auto_sel | 0       |
+|    err_1_fu_713_p3        |     |        | err_1        | select | auto_sel | 0       |
++---------------------------+-----+--------+--------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |           |           |      |      |        |          |      |         | Banks            |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + maxpool         |           |           | 0    | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+--------------------------------------+-------------------------------------------------------------------+
+| Type            | Options                              | Location                                                          |
++-----------------+--------------------------------------+-------------------------------------------------------------------+
+| INTERFACE       | axis port=s_in                       | gen/maxpool.cpp:10 in maxpool, s_in                               |
+| INTERFACE       | axis port=m_out                      | gen/maxpool.cpp:11 in maxpool, m_out                              |
+| INTERFACE       | s_axilite port=halted bundle=control | gen/maxpool.cpp:12 in maxpool, halted                             |
+| INTERFACE       | s_axilite port=error bundle=control  | gen/maxpool.cpp:13 in maxpool, error                              |
+| INTERFACE       | s_axilite port=tx_id bundle=control  | gen/maxpool.cpp:14 in maxpool, tx_id                              |
+| INTERFACE       | s_axilite port=return bundle=control | gen/maxpool.cpp:15 in maxpool, return                             |
+| INLINE          |                                      | include/int16_array_utils.h:51 in run_lane                        |
+| INLINE          |                                      | include/int16_array_utils.h:59 in run                             |
+| INLINE          |                                      | include/int16_array_utils.h:86 in write_lane                      |
+| INLINE          |                                      | include/int16_array_utils.h:93 in run                             |
+| INLINE          |                                      | include/int16_array_utils.h:121 in run                            |
+| INLINE          |                                      | include/int16_array_utils.h:146 in run                            |
+| INLINE          |                                      | include/int16_array_utils.h:175 in run                            |
+| INLINE          |                                      | include/int16_array_utils.h:201 in run                            |
+| INLINE          |                                      | include/int16_array_utils.h:227 in run                            |
+| INLINE          |                                      | include/int16_array_utils.h:257 in run                            |
+| INLINE          |                                      | include/int16_array_utils.h:276 in read_array_lane                |
+| INLINE          |                                      | include/int16_array_utils.h:282 in write_array_lane               |
+| INLINE          |                                      | include/int16_array_utils.h:288 in read_stream_lane               |
+| INLINE          |                                      | include/int16_array_utils.h:294 in write_stream_lane              |
+| INLINE          |                                      | include/int16_array_utils.h:300 in read_axi4_stream_lane          |
+| INLINE          |                                      | include/int16_array_utils.h:306 in read_axi4_stream_lane          |
+| INLINE          |                                      | include/int16_array_utils.h:313 in write_axi4_stream_lane         |
+| INLINE          |                                      | include/int16_array_utils.h:322 in read_framed_stream_lane        |
+| INLINE          |                                      | include/int16_array_utils.h:328 in read_framed_stream_lane        |
+| INLINE          |                                      | include/int16_array_utils.h:335 in write_framed_stream_lane       |
+| INLINE          |                                      | include/int16_array_utils.h:346 in elem_read                      |
+| INLINE          |                                      | include/int16_array_utils.h:353 in elem_write                     |
+| INLINE          |                                      | include/int16_array_utils.h:392 in read_array_slice_dispatch      |
+| UNROLL          |                                      | include/int16_array_utils.h:403 in read_array_slice_dispatch      |
+| PIPELINE        | ii=1                                 | include/int16_array_utils.h:414 in read_array_slice_dispatch      |
+| UNROLL          |                                      | include/int16_array_utils.h:418 in read_array_slice_dispatch      |
+| UNROLL          |                                      | include/int16_array_utils.h:428 in read_array_slice_dispatch      |
+| INLINE          |                                      | include/int16_array_utils.h:437 in read_array_slice_dispatch      |
+| PIPELINE        | ii=1                                 | include/int16_array_utils.h:442 in read_array_slice_dispatch      |
+| INLINE          |                                      | include/int16_array_utils.h:449 in read_array_slice               |
+| INLINE          |                                      | include/int16_array_utils.h:466 in write_array_slice_dispatch     |
+| PIPELINE        | ii=1                                 | include/int16_array_utils.h:473 in write_array_slice_dispatch     |
+| UNROLL          |                                      | include/int16_array_utils.h:476 in write_array_slice_dispatch     |
+| INLINE          |                                      | include/int16_array_utils.h:489 in write_array_slice_dispatch     |
+| PIPELINE        | ii=1                                 | include/int16_array_utils.h:494 in write_array_slice_dispatch     |
+| INLINE          |                                      | include/int16_array_utils.h:501 in write_array_slice              |
+| INLINE          |                                      | include/int16_array_utils.h:517 in write_array_slice_rmw_dispatch |
+| UNROLL          |                                      | include/int16_array_utils.h:529 in write_array_slice_rmw_dispatch |
+| PIPELINE        | ii=1                                 | include/int16_array_utils.h:541 in write_array_slice_rmw_dispatch |
+| UNROLL          |                                      | include/int16_array_utils.h:544 in write_array_slice_rmw_dispatch |
+| UNROLL          |                                      | include/int16_array_utils.h:557 in write_array_slice_rmw_dispatch |
+| INLINE          |                                      | include/int16_array_utils.h:568 in write_array_slice_rmw_dispatch |
+| PIPELINE        | ii=1                                 | include/int16_array_utils.h:573 in write_array_slice_rmw_dispatch |
+| INLINE          |                                      | include/int16_array_utils.h:580 in write_array_slice_rmw          |
+| INLINE          |                                      | include/int16_array_utils.h:590 in read_array_slice               |
+| INLINE          |                                      | include/int16_array_utils.h:596 in write_array_slice              |
+| INLINE          |                                      | include/int16_array_utils.h:602 in read_stream                    |
+| INLINE          |                                      | include/int16_array_utils.h:613 in read_axi4_stream               |
+| INLINE          |                                      | include/int16_array_utils.h:640 in read_axi4_stream               |
+| INLINE          |                                      | include/int16_array_utils.h:647 in read_axi4_stream               |
+| INLINE          |                                      | include/int16_array_utils.h:654 in read_axi4_stream               |
+| INLINE          |                                      | include/int16_array_utils.h:662 in write_stream                   |
+| INLINE          |                                      | include/int16_array_utils.h:673 in write_axi4_stream              |
+| INLINE          |                                      | include/int16_array_utils.h:687 in read_framed_stream             |
+| INLINE          |                                      | include/int16_array_utils.h:703 in read_framed_stream             |
+| INLINE          |                                      | include/int16_array_utils.h:710 in write_framed_stream            |
+| PIPELINE        | ii=1                                 | include/streamutils_hls.h:164 in flush_axi4_stream_to_tlast       |
+| INLINE          |                                      | maxpool_body_impl.tpp:31 in code                                  |
+| INLINE          |                                      | maxpool_body_impl.tpp:49 in compute                               |
+| ARRAY_PARTITION | variable=x_lane complete dim=1       | maxpool_body_impl.tpp:64 in compute, x_lane                       |
+| ARRAY_PARTITION | variable=p_lane complete dim=1       | maxpool_body_impl.tpp:65 in compute, p_lane                       |
+| ARRAY_PARTITION | variable=w_lane complete dim=1       | maxpool_body_impl.tpp:66 in compute, w_lane                       |
+| UNROLL          |                                      | maxpool_body_impl.tpp:68 in compute                               |
+| PIPELINE        | ii=1                                 | maxpool_body_impl.tpp:83 in compute                               |
+| LOOP_TRIPCOUNT  | min=1 max=64                         | maxpool_body_impl.tpp:84 in compute                               |
+| UNROLL          |                                      | maxpool_body_impl.tpp:122 in compute                              |
+| INLINE          |                                      | maxpool_body_impl.tpp:159 in body                                 |
++-----------------+--------------------------------------+-------------------------------------------------------------------+
+
+

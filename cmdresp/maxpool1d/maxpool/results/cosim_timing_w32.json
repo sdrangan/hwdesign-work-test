@@ -1,0 +1,7 @@
+{
+  "transaction_cycles": 6,
+  "report_path": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\maxpool1d_r2\\maxpool\\w32_proj\\solution1\\sim\\report\\maxpool_cosim.rpt",
+  "vitis_version": "2025.1+",
+  "source": "cosim",
+  "top": "maxpool"
+}
