@@ -1,0 +1,78 @@
+(Console tail of `python qam16_llr_build.py --through summary`, run 2 (2026-10-15, after
+setting proc_latency = 11), as captured by the session.  The build prints only the last 2000
+characters of Vitis' output.  Run 1 gave the same Vitis results; its cosim_timing step failed
+on a first version of the transaction parser, fixed before run 2.)
+
+check_csim:
+    results\check_csim.json
+    csim   w32/one_samp             PASS
+    csim   w32/rand_1024            PASS
+    csim   w32/saturate             PASS
+    csim   w32/two_cmds             PASS
+    csim   w32/unknown_cmd          PASS
+    csim   w32/unknown_cmd_fresh    PASS
+    csim   w32/bad_nsamp            PASS
+    csim   w32/bad_nsamp_fresh      PASS
+    csim   w32/early_tlast          PASS
+    csim   w32/early_tlast_fresh    PASS
+    csim   w32/no_tlast             PASS
+    csim   w32/no_tlast_fresh       PASS
+    PASSED (0.0 s)
+csynth:
+    w32_proj\solution1
+    results\cosim_done.txt
+    RUNNING...
+n : 9 / 12 [n/a] @ "16785000"
+// RTL Simulation : 10 / 12 [n/a] @ "17155000"
+// RTL Simulation : 11 / 12 [n/a] @ "17465000"
+// RTL Simulation : 12 / 12 [n/a] @ "17975000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 18145 ns : File "C:/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+## quit
+INFO: [Common 17-206] Exiting xsim at Thu Oct 15 00:22:26 2026...
+INFO: [COSIM 212-316] Starting C post checking ...
+w32 scenario one_samp         halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario rand_1024        halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario saturate         halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario two_cmds         halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario unknown_cmd      halted=1 error=4 tx_id=51 unread_words=10
+w32 scenario unknown_cmd_fresh halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario bad_nsamp        halted=1 error=3 tx_id=61 unread_words=1031
+w32 scenario bad_nsamp_fresh  halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario early_tlast      halted=1 error=1 tx_id=71 unread_words=7
+w32 scenario early_tlast_fresh halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario no_tlast         halted=1 error=2 tx_id=80 unread_words=6
+w32 scenario no_tlast_fresh   halted=0 error=0 tx_id=0 unread_words=0
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1037
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:02:14; Allocated memory: 11.801 MB.
+WAVEFLOW_SUCCESS: qam16_llr C synthesis and RTL co-simulation of  passed.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 2m 46s
+    PASSED (167.6 s)
+inspect_synth:
+    results\resources.json
+    results\loop_df.csv
+  qam16_llr: no platform selected — wrote resources.json only
+  modules {'lut': 1031, 'ff': 653, 'dsp': 4, 'bram': 0, 'uram': 0} + integration {'bram': 0, 'dsp': 0, 'ff': 0, 'lut': -2, 'uram': 0} = top {'bram': 0, 'dsp': 4, 'ff': 653, 'lut': 1029, 'uram': 0}
+    PASSED (0.1 s)
+check_cosim:
+    results\check_cosim.json
+    cosim  w32/one_samp             PASS
+    cosim  w32/rand_1024            PASS
+    cosim  w32/saturate             PASS
+    cosim  w32/two_cmds             PASS
+    cosim  w32/unknown_cmd          PASS
+    cosim  w32/unknown_cmd_fresh    PASS
+    cosim  w32/bad_nsamp            PASS
+    cosim  w32/bad_nsamp_fresh      PASS
+    cosim  w32/early_tlast          PASS
+    cosim  w32/early_tlast_fresh    PASS
+    cosim  w32/no_tlast             PASS
+    cosim  w32/no_tlast_fresh       PASS
+    PASSED (0.0 s)
+cosim_timing:
+    results\cosim_timing.json
+    PASSED (0.0 s)
+summary:
+    results\summary.json
+    PASSED (0.1 s)

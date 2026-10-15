@@ -1,0 +1,23 @@
+{
+  "source": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\qam16_llr\\w32_proj\\solution1\\sim\\report\\verilog\\result.transaction.rpt",
+  "per_activation_latency": {
+    "one_samp": 16,
+    "rand_1024": 1039,
+    "saturate": 21,
+    "two_cmds": 362,
+    "unknown_cmd": 18,
+    "unknown_cmd_fresh": 24,
+    "bad_nsamp": 17,
+    "bad_nsamp_fresh": 21,
+    "early_tlast": 31,
+    "early_tlast_fresh": 23,
+    "no_tlast": 17,
+    "no_tlast_fresh": 37
+  },
+  "timing_scenario": "rand_1024",
+  "cosim_cycles": 1039,
+  "py_cycles": 1039,
+  "delta": 0,
+  "tolerance": 20,
+  "pass": true
+}

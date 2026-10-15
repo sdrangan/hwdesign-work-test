@@ -1,0 +1,8 @@
+wrong_round  on rand_1024   : REJECTED
+    burst 1: 1024 words, expected 1024; first difference at word 0
+no_close     on early_tlast : REJECTED
+    rule 6: the output burst in progress at the error was not closed with TLAST
+    burst 3: tlast=False, expected True
+no_halt      on early_tlast : REJECTED
+    status {'halted': 0, 'error': 0, 'tx_id': 0}, expected {'halted': 1, 'error': 1, 'tx_id': 71}
+OVERALL PASS: the checker rejected 3 of 3 wrong outputs

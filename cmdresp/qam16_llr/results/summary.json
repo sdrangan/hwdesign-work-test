@@ -1,0 +1,145 @@
+{
+  "checks": {
+    "model": {
+      "w32/one_samp": true,
+      "w32/rand_1024": true,
+      "w32/saturate": true,
+      "w32/two_cmds": true,
+      "w32/unknown_cmd": true,
+      "w32/unknown_cmd_fresh": true,
+      "w32/bad_nsamp": true,
+      "w32/bad_nsamp_fresh": true,
+      "w32/early_tlast": true,
+      "w32/early_tlast_fresh": true,
+      "w32/no_tlast": true,
+      "w32/no_tlast_fresh": true
+    },
+    "pysim": {
+      "w32/one_samp": true,
+      "w32/rand_1024": true,
+      "w32/saturate": true,
+      "w32/two_cmds": true,
+      "w32/unknown_cmd": true,
+      "w32/unknown_cmd_fresh": true,
+      "w32/bad_nsamp": true,
+      "w32/bad_nsamp_fresh": true,
+      "w32/early_tlast": true,
+      "w32/early_tlast_fresh": true,
+      "w32/no_tlast_fresh": true
+    },
+    "csim": {
+      "w32/one_samp": true,
+      "w32/rand_1024": true,
+      "w32/saturate": true,
+      "w32/two_cmds": true,
+      "w32/unknown_cmd": true,
+      "w32/unknown_cmd_fresh": true,
+      "w32/bad_nsamp": true,
+      "w32/bad_nsamp_fresh": true,
+      "w32/early_tlast": true,
+      "w32/early_tlast_fresh": true,
+      "w32/no_tlast": true,
+      "w32/no_tlast_fresh": true
+    },
+    "cosim": {
+      "w32/one_samp": true,
+      "w32/rand_1024": true,
+      "w32/saturate": true,
+      "w32/two_cmds": true,
+      "w32/unknown_cmd": true,
+      "w32/unknown_cmd_fresh": true,
+      "w32/bad_nsamp": true,
+      "w32/bad_nsamp_fresh": true,
+      "w32/early_tlast": true,
+      "w32/early_tlast_fresh": true,
+      "w32/no_tlast": true,
+      "w32/no_tlast_fresh": true
+    }
+  },
+  "timing": {
+    "source": "C:\\Users\\sdran\\Documents\\repos\\waveflow_blind_tests\\qam16_llr\\w32_proj\\solution1\\sim\\report\\verilog\\result.transaction.rpt",
+    "per_activation_latency": {
+      "one_samp": 16,
+      "rand_1024": 1039,
+      "saturate": 21,
+      "two_cmds": 362,
+      "unknown_cmd": 18,
+      "unknown_cmd_fresh": 24,
+      "bad_nsamp": 17,
+      "bad_nsamp_fresh": 21,
+      "early_tlast": 31,
+      "early_tlast_fresh": 23,
+      "no_tlast": 17,
+      "no_tlast_fresh": 37
+    },
+    "timing_scenario": "rand_1024",
+    "cosim_cycles": 1039,
+    "py_cycles": 1039,
+    "delta": 0,
+    "tolerance": 20,
+    "pass": true
+  },
+  "loops": "PipelineII,PipelineDepth,TripCountMin,TripCountMax,LatencyMin,LatencyMax\n1,5,1,1024,5,1028\n,3 ~ 1036,,,,\n",
+  "resources": {
+    "top_name": "qam16_llr",
+    "top": {
+      "bram": 0,
+      "dsp": 4,
+      "ff": 653,
+      "lut": 1029,
+      "uram": 0
+    },
+    "available": {
+      "bram": 280,
+      "dsp": 220,
+      "ff": 106400,
+      "lut": 53200,
+      "uram": 0
+    },
+    "modules": [
+      {
+        "key": "qam16_llr_accel-f747d62b",
+        "path": "qam16_llr",
+        "cls_name": "Qam16LlrAccel",
+        "rtl_module": "qam16_llr",
+        "resources": {
+          "bram": 0,
+          "dsp": 4,
+          "ff": 653,
+          "lut": 1031,
+          "uram": 0
+        },
+        "subblocks": {
+          "qam16_llr_Pipeline_samples": {
+            "dsp": 4,
+            "ff": 378,
+            "lut": 632,
+            "bram": 0,
+            "uram": 0
+          }
+        }
+      }
+    ],
+    "unclaimed": {},
+    "module_sum": {
+      "lut": 1031,
+      "ff": 653,
+      "dsp": 4,
+      "bram": 0,
+      "uram": 0
+    },
+    "integration": {
+      "bram": 0,
+      "dsp": 0,
+      "ff": 0,
+      "lut": -2,
+      "uram": 0
+    },
+    "params": {
+      "in_bw": 32,
+      "out_bw": 32
+    },
+    "synth_seconds": 0.0,
+    "filed_into": null
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "scenario": "rand_1024",
+  "transaction_cycles": 1039,
+  "clk_freq": 100000000.0,
+  "source": "py_sim"
+}

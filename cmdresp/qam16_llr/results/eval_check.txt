@@ -1,0 +1,22 @@
+1. Hand-computed examples (inv_var, yI, yQ raw -> b0..b3 raw s6.2)
+   unit      inv_var=0x0100 yI=   256 yQ=  -128 -> [4, 4, -2, 6] expected [4, 4, -2, 6]  PASS
+   rounding  inv_var=0x0280 yI=   192 yQ=  -192 -> [8, 13, -7, 13] expected [8, 13, -7, 13]  PASS
+   saturate  inv_var=0xffff yI= 32767 yQ=-32768 -> [127, -128, -128, -128] expected [127, -128, -128, -128]  PASS
+2. Independent reference (Python integers) vs qam16_llr_eval, bit for bit
+   inv_var=0x0000: 4144 samples, 0 saturated LLRs, 0 mismatches  PASS
+   inv_var=0x0001: 4144 samples, 0 saturated LLRs, 0 mismatches  PASS
+   inv_var=0x0100: 4144 samples, 12173 saturated LLRs, 0 mismatches  PASS
+   inv_var=0x0155: 4144 samples, 13075 saturated LLRs, 0 mismatches  PASS
+   inv_var=0x0800: 4144 samples, 15527 saturated LLRs, 0 mismatches  PASS
+   inv_var=0x7fff: 4144 samples, 16323 saturated LLRs, 0 mismatches  PASS
+   inv_var=0xffff: 4144 samples, 16340 saturated LLRs, 0 mismatches  PASS
+   inv_var=0xf1e5: 4144 samples, 16340 saturated LLRs, 0 mismatches  PASS
+   inv_var=0xa006: 4144 samples, 16314 saturated LLRs, 0 mismatches  PASS
+   inv_var=0xaf26: 4144 samples, 16325 saturated LLRs, 0 mismatches  PASS
+   inv_var=0xe5af: 4144 samples, 16321 saturated LLRs, 0 mismatches  PASS
+   inv_var=0x940a: 4144 samples, 16310 saturated LLRs, 0 mismatches  PASS
+3. Stream model: nsamp outside 1..1024 halts with BAD_PARAM, nothing written
+   nsamp=    0: status {'halted': 1, 'error': 3, 'tx_id': 9}, 0 bursts  PASS
+   nsamp= 1025: status {'halted': 1, 'error': 3, 'tx_id': 9}, 0 bursts  PASS
+   nsamp=65535: status {'halted': 1, 'error': 3, 'tx_id': 9}, 0 bursts  PASS
+OVERALL PASS

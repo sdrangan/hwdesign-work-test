@@ -1,0 +1,13 @@
+{
+  "w32/one_samp": [],
+  "w32/rand_1024": [],
+  "w32/saturate": [],
+  "w32/two_cmds": [],
+  "w32/unknown_cmd": [],
+  "w32/unknown_cmd_fresh": [],
+  "w32/bad_nsamp": [],
+  "w32/bad_nsamp_fresh": [],
+  "w32/early_tlast": [],
+  "w32/early_tlast_fresh": [],
+  "w32/no_tlast_fresh": []
+}
